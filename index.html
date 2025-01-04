@@ -5,48 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watchify</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Tsukimi+Rounded&display=swap");
+      :root {
+        --accent-color: #1f1e1e;
+        --primary-text-color: #fff;
+        --primary-text-hover-color: #000;
+        --primary-background-hover-color: rgb(236, 244, 252);
+      }
       * {
         margin: 0;
         padding: 0;
       }
-      .navigation {
-        width: 100%;
-        height: 8vh;
-        border: 1px solid black;
-        overflow: hidden;
+      .navigationBar {
         display: flex;
+        height: 75px;
+        width: 100%;
+        background: var(--accent-color);
         align-items: center;
         justify-content: space-between;
+        /* setting padding for : top right bottom left */
+        padding: 0 50px 0 50px;
+        /* allow items to take more than one line if they dont fit in a single line */
+        flex-wrap: wrap;
       }
 
       .nameLogo {
         display: flex;
-        align-items: center;
         justify-content: center;
-        height: 100%;
-        margin-left: 10px;
-        gap: 10px;
+        align-items: center;
+        color: aliceblue;
       }
       .nameLogo .name {
-        font-weight: bold;
-        font-size: large;
+        color: var(--primary-text-color);
+        font-size: 30px;
+        font-weight: bolder;
+        font-family: "Tsukimi Rounded", serif;
+      }
+      .navigationButtons ul {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        padding: 5px 10px;
+        margin: 0 50px 0 50px;
+      }
+      .navigationButtons ul li .navBtn {
+        margin: 0 10px;
+        cursor: pointer;
+        color: var(--primary-text-color);
+        font-size: 20px;
+        font-family: "Tsukimi Rounded", serif;
+        border-radius: 5px;
+        padding: 5px 10px;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: "Tsukimi Rounded", serif;
+        transition: 0.2s ease;
+      }
+      .navigationButtons ul li a:hover {
+        color: var(--primary-text-hover-color);
+        background-color: var(--primary-background-hover-color);
+      }
+      .navigationButtons ul li .activeNavigationButton {
+        color: var(--primary-text-hover-color);
+        background-color: var(--primary-background-hover-color);
+        color: #1f1e1e;
       }
     </style>
   </head>
   <body>
-    <nav class="navigation">
+    <nav class="navigationBar">
       <div class="nameLogo">
         <div class="logo">
-          <img
-            src="./Assets/Images/watchifyLogoTransparent.png"
-            alt="Logo"
-            width="65"
-            height="60"
-          />
+          <!-- PLACEHOLDER FOR LOGO-->
         </div>
         <div class="name"><span class="name">Watchify</span></div>
       </div>
+      <div class="navigationButtons">
+        <ul>
+          <li><a href="#" class="navBtn activeNavigationButton">Home</a></li>
+          <li><a href="#" class="navBtn">Products</a></li>
+          <li><a href="#" class="navBtn">Brands</a></li>
+          <li><a href="#" class="navBtn">About</a></li>
+        </ul>
+      </div>
     </nav>
-    <h1>watchify connection to netlify test 3</h1>
   </body>
 </html>
