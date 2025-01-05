@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Tsukimi+Rounded&display=swap");
 :root {
-  --accent-color: #319b79;
+  --accent-color: #232927;
   --primary-text-color: #ffffff;
   --primary-text-hover-color: #000;
   --primary-background-hover-color: rgb(236, 244, 252);
@@ -14,23 +14,14 @@
 html {
   scroll-behavior: smooth;
 }
-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1000;
-  background-size: cover;
-  transition: 0.9s ease;
-}
 
 body {
-  /* /set video background */
   font-family: "DM Serif Text", serif;
-  background: rgba(0, 0, 0, 0.8);
+  background-image: url(".././Assets/Images/watchBgF.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
   color: var(--primary-text-color);
   overflow-x: hidden;
   transition: 0.9s ease;
@@ -75,7 +66,7 @@ body {
   padding: 5px 10px;
   margin: 0 50px 0 50px;
 }
-.navigationButtons ul li .navBtn {
+.navBtn {
   margin: 0 10px;
   cursor: pointer;
   color: var(--primary-text-color);
@@ -88,6 +79,11 @@ body {
   font-family: "Tsukimi Rounded", serif;
   transition: 0.2s ease-in-out;
   position: relative;
+}
+.activeNavigationButton {
+  color: var(--primary-text-hover-color);
+  background-color: var(--primary-background-hover-color);
+  color: #1f1e1e;
 }
 
 .navigationButtons ul li .navBtn::after {
@@ -119,9 +115,4 @@ body {
 .navigationButtons ul li a:hover {
   color: var(--primary-text-hover-color);
   background-color: var(--primary-background-hover-color);
-}
-.navigationButtons ul li .activeNavigationButton {
-  color: var(--primary-text-hover-color);
-  background-color: var(--primary-background-hover-color);
-  color: #1f1e1e;
 }

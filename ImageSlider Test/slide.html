@@ -5,99 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        color: rgb(255, 0, 0);
-      }
       body {
-        background-color: #312f2f;
-      }
-      .container {
-        display: flex;
-        width: 90%;
-        height: 70vh;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid;
-      }
-      .slider {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-      .overflow {
-        min-width: 100%;
-        height: 100%;
-        display: flex;
-
-        animation: slide 5s infinite;
-        border: 2px solid red;
-        overflow: hidden;
-      }
-      .slide1,
-      .slide2,
-      .slide3 {
-        min-width: 100%;
-        height: 100%;
-        background-color: #f1c40f;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .slide1 {
-        transform: translateX(0%);
-        z-index: 1;
-      }
-      .slide2 {
-        transform: translateX(-100%);
-      }
-      .slide3 {
-        transform: translateX(200%);
-      }
-      .slideContent {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        background: url("image.png");
       }
     </style>
   </head>
-  <body>
-    <div class="container">
-      <div class="slider">
-        <div class="overflow">
-          <div class="slide1">
-            <div class="slideContent">
-              <img
-                src="image.png"
-                alt=""
-                style="
-                  position: relative;
-                  z-index: -1;
-                  width: 100%;
-                  height: 100%;
-                "
-              />
-              <h2 style="position: absolute; z-index: 2; top: 50px; left: 50px">
-                hello world
-              </h2>
-            </div>
-          </div>
-          <div class="slide2">
-            <div class="slideContent">
-              <h2>hello world2</h2>
-            </div>
-          </div>
-          <div class="slide3">
-            <div class="slideContent">
-              <h2>hello world3</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+  <body></body>
 </html>
