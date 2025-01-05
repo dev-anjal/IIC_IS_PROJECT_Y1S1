@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Tsukimi+Rounded&display=swap");
 :root {
-  --accent-color: #1f1e1e;
+  --accent-color: #a0adb9;
   --primary-text-color: #fff;
   --primary-text-hover-color: #000;
   --primary-background-hover-color: rgb(236, 244, 252);
@@ -70,12 +70,32 @@ body {
   transition: 0.2s ease-in-out;
   position: relative;
 }
+
 .navigationButtons ul li .navBtn::after {
   content: "";
-  height: 4px;
-  width: 100%;
-  background-color: cyan;
+  width: 0%;
+  height: 1.6px;
+  background-color: rgb(0, 0, 0);
   position: absolute;
+  bottom: 3px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.25s ease;
+  opacity: 0.1;
+}
+.navigationButtons ul li .navBtn:hover::after {
+  content: "";
+  width: 75%;
+  margin: auto;
+  height: 1.6px;
+  background-color: rgb(9, 102, 97);
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
 }
 .navigationButtons ul li a:hover {
   color: var(--primary-text-hover-color);
