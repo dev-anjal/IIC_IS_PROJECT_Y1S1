@@ -17,8 +17,8 @@ html {
 
 body {
   font-family: "DM Serif Text", serif;
-  background-image: url(".././Assets/Images/watchBgF.jpeg");
-  background-size: cover;
+  background-image: url(".././Assets/Images/watchBg.jpg");
+
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right;
@@ -55,7 +55,7 @@ body {
 }
 .nameLogo .name {
   color: var(--primary-text-color);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bolder;
   font-family: "Tsukimi Rounded", serif;
 }
