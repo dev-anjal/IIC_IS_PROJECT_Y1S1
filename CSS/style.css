@@ -68,6 +68,14 @@ body {
   font-weight: bolder;
   font-family: "Tsukimi Rounded", serif;
   transition: 0.2s ease-in-out;
+  position: relative;
+}
+.navigationButtons ul li .navBtn::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: cyan;
+  position: absolute;
 }
 .navigationButtons ul li a:hover {
   color: var(--primary-text-hover-color);
