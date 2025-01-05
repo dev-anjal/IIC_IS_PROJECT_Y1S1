@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Tsukimi+Rounded&display=swap");
 :root {
-  --accent-color: #2e2e2b;
+  --accent-color: #319b79;
   --primary-text-color: #ffffff;
   --primary-text-hover-color: #000;
   --primary-background-hover-color: rgb(236, 244, 252);
@@ -14,18 +14,32 @@
 html {
   scroll-behavior: smooth;
 }
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  background-size: cover;
+  transition: 0.9s ease;
+}
 
 body {
+  /* /set video background */
   font-family: "DM Serif Text", serif;
-  background-color: #f5f5f5;
-
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--primary-text-color);
+  overflow-x: hidden;
   transition: 0.9s ease;
 }
 .navigationBar {
   display: flex;
   height: 75px;
   width: 100%;
-  background: var(--accent-color);
+  background: transparent;
   align-items: center;
   justify-content: space-between;
   /* fixing the navbar at the top permanently */
