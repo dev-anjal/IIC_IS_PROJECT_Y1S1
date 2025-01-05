@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Tsukimi+Rounded&display=swap");
+:root {
+  --accent-color: #1f1e1e;
+  --primary-text-color: #fff;
+  --primary-text-hover-color: #000;
+  --primary-background-hover-color: rgb(236, 244, 252);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "DM Serif Text", serif;
+  background-color: #f5f5f5;
+
+  transition: 0.9s ease;
+}
+.navigationBar {
+  display: flex;
+  height: 75px;
+  width: 100%;
+  background: var(--accent-color);
+  align-items: center;
+  justify-content: space-between;
+  /* fixing the navbar at the top permanently */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* setting padding for : top right bottom left */
+  padding: 0 50px 0 50px;
+  /* allow items to take more than one line if they dont fit in a single line */
+  flex-wrap: wrap;
+  /*creating a slide down animation when loading the page */
+  transform: translateY(-100%);
+  transition: 1s ease;
+}
+
+.nameLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+}
+.nameLogo .name {
+  color: var(--primary-text-color);
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: "Tsukimi Rounded", serif;
+}
+.navigationButtons ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 5px 10px;
+  margin: 0 50px 0 50px;
+}
+.navigationButtons ul li .navBtn {
+  margin: 0 10px;
+  cursor: pointer;
+  color: var(--primary-text-color);
+  font-size: 20px;
+  font-family: "Tsukimi Rounded", serif;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bolder;
+  font-family: "Tsukimi Rounded", serif;
+  transition: 0.2s ease-in-out;
+}
+.navigationButtons ul li a:hover {
+  color: var(--primary-text-hover-color);
+  background-color: var(--primary-background-hover-color);
+}
+.navigationButtons ul li .activeNavigationButton {
+  color: var(--primary-text-hover-color);
+  background-color: var(--primary-background-hover-color);
+  color: #1f1e1e;
+}
