@@ -132,18 +132,20 @@
 
       // creating a loading animation when website is loading
       function loadingAnimation() {
-        console.log("loading function is called");
-        document.querySelector(".navigationBar").style.transform =
-          "translateY(5px)";
+        setTimeout(() => {
+          console.log("loading function is called");
+          document.querySelector(".navigationBar").style.transform =
+            "translateY(5px)";
+        }, 130);
       }
       setTimeout(() => {
         document.querySelector(".introFirstText").classList.add("rollTheIntro");
-      }, 300);
+      }, 260);
       setTimeout(() => {
         document
           .querySelector(".introSecondText")
           .classList.add("slideIntroText");
-      }, 600);
+      }, 500);
     </script>
   </body>
 </html>

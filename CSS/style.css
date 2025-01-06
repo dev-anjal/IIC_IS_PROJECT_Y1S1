@@ -52,6 +52,7 @@ body {
   flex-wrap: wrap;
   /*creating a slide down animation when loading the page */
   transform: translateY(-100%);
+
   transition: 0.8s ease;
 }
 
