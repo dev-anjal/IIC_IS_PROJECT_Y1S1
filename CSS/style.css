@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Tsukimi+Rounded&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Erica+One&family=Tsukimi+Rounded&display=swap");
+
 :root {
   --accent-color: #232927;
   --primary-text-color: #ffffff;
   --primary-text-hover-color: #000;
-  --primary-background-hover-color: rgb(236, 244, 252);
+  --primary-background-hover-color: rgba(255, 255, 255, 0.99);
 }
 * {
   margin: 0;
@@ -52,20 +52,22 @@ body {
   flex-wrap: wrap;
   /*creating a slide down animation when loading the page */
   transform: translateY(-100%);
-  transition: 1s ease;
+  transition: 0.8s ease;
 }
 
-.nameLogo {
+.navigationBar .nameLogo {
   display: flex;
   justify-content: center;
   align-items: center;
   color: aliceblue;
 }
-.nameLogo .name {
+.navigationBar .nameLogo .name {
   color: var(--primary-text-color);
   font-size: 32px;
-  font-weight: bolder;
-  font-family: "Tsukimi Rounded", serif;
+  font-weight: bold;
+  font-family: "DM Serif Text", serif;
+  letter-spacing: 1.1px;
+  cursor: pointer;
 }
 .navigationButtons ul {
   display: flex;
@@ -74,7 +76,7 @@ body {
   padding: 5px 10px;
   margin: 0 50px 0 50px;
 }
-.navBtn {
+.navigationButtons ul .navBtn {
   margin: 0 10px;
   cursor: pointer;
   color: var(--primary-text-color);
@@ -83,15 +85,16 @@ body {
   border-radius: 5px;
   padding: 5px 10px;
   text-decoration: none;
-  font-weight: bolder;
   font-family: "Tsukimi Rounded", serif;
+  font-weight: bolder;
   transition: 0.2s ease-in-out;
   position: relative;
+  color: aliceblue;
 }
-.activeNavigationButton {
+.navigationButtons ul .activeNavigationButton {
   color: var(--primary-text-hover-color);
   background-color: var(--primary-background-hover-color);
-  color: #1f1e1e;
+  color: #0e0d0d;
 }
 
 .navigationButtons ul li .navBtn::after {
@@ -109,7 +112,7 @@ body {
 }
 .navigationButtons ul li .navBtn:hover::after {
   content: "";
-  width: 75%;
+  width: 72%;
   margin: auto;
   height: 1.6px;
   background-color: rgb(9, 102, 97);
@@ -123,4 +126,8 @@ body {
 .navigationButtons ul li a:hover {
   color: var(--primary-text-hover-color);
   background-color: var(--primary-background-hover-color);
+}
+.navigationButtons ul li a:hover .cartIcon {
+  fill: var(--primary-text-hover-color);
+  border-radius: 5px;
 }
