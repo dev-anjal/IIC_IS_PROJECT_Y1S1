@@ -8,7 +8,7 @@
     <script src="./JS/main.js"></script>
     <style></style>
   </head>
-  <body onload="loadingAnimation()" background-color="black">
+  <body onload="loadingAnimation()" background-color="black" class="grayscale">
     <nav class="navigationBar" style="z-index: 999">
       <div class="nameLogo">
         <div class="logo">
@@ -31,7 +31,7 @@
       <div class="navigationButtons">
         <ul>
           <li><a href="#" class="navBtn">Home</a></li>
-          <li><a href="#" class="navBtn">Products</a></li>
+          <li><a href="#Products" class="navBtn">Products</a></li>
           <li><a href="#" class="navBtn">Brands</a></li>
           <li><a href="#" class="navBtn">About</a></li>
           <li><a href="#" class="navBtn">Blog</a></li>
@@ -61,17 +61,33 @@
     <br /><br /><br /><br />
     <br />
     <br />
-    <main style="display: block">
+
+    <!--Main Content-->
+
+    <main
+      style="
+        display: block;
+        width: 100%;
+        height: 100vh;
+
+        scroll-snap-type: y mandatory;
+      "
+    >
       <div
         class="centerIntro"
         style="display: flex; width: 100%; justify-content: end"
       >
         <div class="introAnimation" style="padding-top: 50px">
           <div class="introFirstPart">
-            <h1 class="introFirstText">Discover</h1>
+            <h1 class="introFirstText">Luxury</h1>
           </div>
           <div class="introSecondPart">
-            <h1 class="introSecondText">&nbsp;&nbsp;&nbsp;The Art Of Time.</h1>
+            <h1 class="introSecondText">
+              &nbsp;&nbsp;&nbsp;&nbsp; For Everyone<span
+                style="color: rgb(224, 231, 205)"
+                >.</span
+              >
+            </h1>
           </div>
         </div>
       </div>
@@ -83,10 +99,11 @@
           display: flex;
 
           justify-content: end;
-          /* border: 1px solid wheat; */
+
           transform: translateY(0px);
         "
       >
+        <!--TODO this is a product and needs to be linked to its official page-->
         <div
           class="IntroWatch"
           style="
@@ -111,7 +128,7 @@
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop
                     offset="0%"
-                    style="stop-color: rgba(247, 214, 24, 0.459)"
+                    style="stop-color: rgba(247, 214, 24, 0.568)"
                   ></stop>
                   <stop
                     offset="100%"
@@ -138,6 +155,45 @@
       </div>
     </main>
 
+    <div id="Products">
+      <!-- aDDING SOME GAPS-->
+      <br /><br /><br /><br />
+      <div class="ProductsContent" style="scroll-snap-type: start">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nulla
+        placeat dolorum, earum atque neque, eligendi totam aut temporibus
+        cumque, quas error ex quis commodi officiis ut? Soluta, eveniet. Saepe
+        vitae rem maiores minima molestiae asperiores deleniti omnis illo
+        exercitationem, veritatis voluptas temporibus tempora cum. Ullam cum rem
+        delectus numquam eius natus modi, impedit officia perspiciatis pariatur
+        ab voluptas ipsum, blanditiis cumque labore deleniti deserunt suscipit
+        sapiente? Perferendis molestias repellat facilis fugit autem quibusdam
+        corrupti, saepe beatae, praesentium quasi deserunt laudantium id
+        maiores. Molestias magnam deserunt doloribus quia maiores molestiae enim
+        illo officiis, earum at dolore ex consequuntur aspernatur! Consequatur
+        officia sequi libero, ipsum illo odit error, doloremque, ut reiciendis
+        at similique aliquid ad voluptates ex consectetur aperiam! Molestiae
+        dolor praesentium maiores autem? Nihil libero dolores quasi nam, quam
+        necessitatibus vel eaque accusamus doloremque assumenda voluptatibus
+        optio consequuntur ex in molestias. Atque quam aut obcaecati in
+        assumenda alias distinctio veniam optio quae modi sequi blanditiis odit
+        amet, unde ducimus ipsa. Voluptates nihil, nostrum fugit veniam repellat
+        dolore dignissimos et animi iste, maxime pariatur? Qui aliquid vel optio
+        neque tempora doloremque facere quidem voluptatem sequi veniam, eveniet
+        autem tenetur cupiditate saepe at. Dicta excepturi veritatis quo porro,
+        nisi pariatur maxime minima accusantium laboriosam ullam nobis ad
+        voluptate perspiciatis impedit, itaque, reprehenderit dolorem quaerat
+        totam. Doloribus nostrum, rem dicta debitis pariatur eos eveniet
+        eligendi suscipit iusto praesentium corporis libero culpa aliquid
+        molestias quibusdam tempora quasi aspernatur ratione at dolor magnam.
+        Commodi nisi perferendis possimus laudantium quo, iure quia, veniam
+        quae, corporis nobis perspiciatis tenetur ratione? Ducimus harum vitae
+        modi laudantium cupiditate eius, deleniti dolores culpa nulla non
+        nostrum tempore ab dolor error vero repudiandae! Consequuntur officiis
+        quod officia vel nisi. Corrupti nostrum maxime non, iusto ex dignissimos
+        repellendus quae illo soluta rem eveniet, est accusantium consectetur
+        voluptas. Aspernatur corporis odio eligendi! Voluptatibus!
+      </div>
+    </div>
     <noscript>Please Enable JavaScript In Your Browser </noscript>
     <script type="text/javascript" defer>
       const btn = document.querySelectorAll(".navBtn");

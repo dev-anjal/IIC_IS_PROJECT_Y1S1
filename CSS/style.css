@@ -14,6 +14,9 @@
 html {
   scroll-behavior: smooth;
 }
+.greyscale {
+  border-image: linear-gradient(hsl(14, 86%, 53%), hsl(249, 94%, 42%));
+}
 
 body {
   font-family: "DM Serif Text", serif;
@@ -25,6 +28,7 @@ body {
   color: var(--primary-text-color);
   overflow-x: hidden;
   transition: 0.9s ease;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -38,7 +42,8 @@ body {
   display: flex;
   height: 75px;
   width: 100%;
-  background: rgba(126, 122, 85, 0.041);
+  background: rgba(109, 108, 102, 0.0456);
+  border-bottom: 1.2px solid rgba(255, 255, 255, 0.137);
   align-items: center;
   justify-content: space-between;
   /* fixing the navbar at the top permanently */
@@ -52,7 +57,7 @@ body {
   flex-wrap: wrap;
   /*creating a slide down animation when loading the page */
   transform: translateY(-100%);
-
+  backdrop-filter: blur(7px);
   transition: 0.8s ease;
 }
 
@@ -231,7 +236,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  animation: pulseWatch 3s infinite;
+  animation: pulseWatch 3.5s infinite;
   animation-delay: 0.8s;
 }
 
@@ -240,10 +245,16 @@ body {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.01);
-    transform: translateY(-5px);
+    transform: translateY(-7px) scale(1.02);
   }
   100% {
     transform: scale(1);
   }
+}
+
+#Products {
+  min-width: 100%;
+  min-height: 100vh;
+
+  scroll-snap-type: y mandatory;
 }
