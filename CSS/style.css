@@ -38,7 +38,7 @@ body {
   display: flex;
   height: 75px;
   width: 100%;
-  background: transparent;
+  background: rgba(126, 122, 85, 0.041);
   align-items: center;
   justify-content: space-between;
   /* fixing the navbar at the top permanently */
@@ -144,9 +144,9 @@ body {
   transition: 0.8s ease;
 }
 .introAnimation .introFirstPart {
-  border-bottom-right-radius: 87%;
+  border-bottom-right-radius: 77%;
   font-size: 38px;
-  width: 88%;
+  min-width: 88%;
   overflow: hidden;
   height: 27%;
   /* border: 1px solid white; */
@@ -180,4 +180,70 @@ body {
 .introAnimation .introFirstPart .rollTheIntro {
   transform: translateY(0px);
   transition: transform 2s cubic-bezier(0.86, 0.06, 0.07, 1);
+}
+
+.introWatch {
+  display: none;
+}
+.introWatchAnimation {
+  display: block;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.blobb {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  right: 10%;
+  top: -6%;
+  animation: rotateBlob 17s alternate infinite;
+}
+@keyframes rotateBlob {
+  /* back and fourth 10deg and again back to 0, like this back and fourth rotation and pulsing scaling  every 10%*/
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  10% {
+    transform: rotate(20deg) scale(1.06);
+  }
+  20% {
+    transform: rotate(0deg) scale(1);
+  }
+  30% {
+    transform: rotate(-10deg) scale(1.06);
+  }
+  40% {
+    transform: rotate(10deg) scale(1);
+  }
+
+  80% {
+    transform: rotate(100deg) scale(1);
+  }
+  90% {
+    transform: rotate(60deg) scale(1.06);
+  }
+  100% {
+    transform: rotate(10deg) scale(1);
+  }
+}
+
+.displayWatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: pulseWatch 3s infinite;
+  animation-delay: 0.8s;
+}
+
+@keyframes pulseWatch {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
