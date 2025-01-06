@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watchify</title>
     <link rel="stylesheet" href="./CSS/style.css" />
+    <script src="./JS/main.js"></script>
     <style></style>
   </head>
   <body onload="loadingAnimation()" background-color="black">
@@ -58,10 +59,62 @@
 
     <!--Creating a gap between main content and navigationBar-->
     <br /><br /><br /><br />
-    <div class="watchShowCaseSlider">
-      <!-- PLACEHOLDER FOR WATCH SHOWCASE SLIDER -->
-    </div>
+    <br />
+    <main>
+      <div
+        class="centerIntro"
+        style="display: flex; width: 100%; justify-content: end"
+      >
+        <div class="introAnimation" style="padding-top: 50px">
+          <div class="introFirstPart">
+            <h1 class="introFirstText">Discover</h1>
+          </div>
+          <div class="introSecondPart">
+            <h1 class="introSecondText">&nbsp;&nbsp;&nbsp;The Art Of Time.</h1>
+          </div>
+        </div>
+      </div>
 
+      <div
+        class="IntroWatch"
+        style="
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          justify-content: end;
+          /* border: 1px solid wheat; */
+          transform: translateY(0px);
+        "
+      >
+        <div style="position: absolute; right: 5%; top: 0">
+          <div
+            class="backgroundCircle"
+            style="
+              width: 460px;
+              height: 460px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              /* the border should be soft radial gradient */
+              background: radial-gradient(
+                circle,
+                rgba(229, 230, 185, 0.4) 0%,
+                rgba(255, 255, 255, 0) 100%
+              );
+            "
+          >
+            <img
+              src="./Assets/Images/AnarcTransparent.png"
+              alt=""
+              width="480px"
+              height="350"
+              style="position: relative; top: 0"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
     <noscript>Please Enable JavaScript In Your Browser </noscript>
     <script type="text/javascript" defer>
       const btn = document.querySelectorAll(".navBtn");
@@ -83,6 +136,14 @@
         document.querySelector(".navigationBar").style.transform =
           "translateY(5px)";
       }
+      setTimeout(() => {
+        document.querySelector(".introFirstText").classList.add("rollTheIntro");
+      }, 300);
+      setTimeout(() => {
+        document
+          .querySelector(".introSecondText")
+          .classList.add("slideIntroText");
+      }, 600);
     </script>
   </body>
 </html>

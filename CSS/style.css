@@ -131,3 +131,52 @@ body {
   fill: var(--primary-text-hover-color);
   border-radius: 5px;
 }
+
+.introAnimation {
+  height: 50vh;
+  width: 40%;
+  /* background: rgba(0, 0, 0, 0.5); */
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  z-index: 100;
+  transition: 0.8s ease;
+}
+.introAnimation .introFirstPart {
+  border-bottom-right-radius: 87%;
+  font-size: 38px;
+  width: 88%;
+  overflow: hidden;
+  height: 27%;
+  /* border: 1px solid white; */
+  /* transform: translateX(47px); */
+}
+.introAnimation .introFirstPart h1 {
+  transform: translateY(120px);
+  font-family: "Black Ops One", sans-serif;
+  color: beige;
+}
+.introSecondPart {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24px;
+  width: fit-content;
+  overflow: hidden;
+  height: 30%;
+  /* border: 1px solid rgb(235, 213, 14); */
+  transform: translateX(10px);
+  transform: translateY(-20px);
+  color: gold;
+}
+.introAnimation .introSecondPart h1 {
+  transform: translateX(120%);
+}
+.introAnimation .introSecondPart .slideIntroText {
+  transform: translateX(0%);
+  transition: transform 2s cubic-bezier(0.86, 0.06, 0.07, 1);
+}
+
+.introAnimation .introFirstPart .rollTheIntro {
+  transform: translateY(0px);
+  transition: transform 2s cubic-bezier(0.86, 0.06, 0.07, 1);
+}
