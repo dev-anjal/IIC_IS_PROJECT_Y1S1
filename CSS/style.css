@@ -26,6 +26,14 @@ body {
   overflow-x: hidden;
   transition: 0.9s ease;
 }
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(".././Assets/Images/watchBgF.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
 .navigationBar {
   display: flex;
   height: 75px;

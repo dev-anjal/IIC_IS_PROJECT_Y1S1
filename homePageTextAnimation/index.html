@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        border: 1px solid black;
+      }
+      .tohide {
+        width: 120px;
+        height: 80px;
+        display: inline-block;
+        /* border: 1px solid black; */
+        border-bottom-right-radius: 100%;
+        /* border-bottom-left-radius: 20%; */
+        overflow: hidden;
+      }
+      h2 {
+        transform: translateY(75px);
+        transition: transform 2s cubic-bezier(0.86, 0.06, 0.07, 1);
+      }
+      .tohide:hover h2 {
+        transform: translateY(10px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tohide">
+        <h2>Watches</h2>
+      </div>
+      <h3>That Matters</h3>
+    </div>
+  </body>
+</html>
