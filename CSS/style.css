@@ -28,7 +28,7 @@ body {
   color: var(--primary-text-color);
   overflow-x: hidden;
   transition: 0.9s ease;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 @media screen and (max-width: 768px) {
   body {
@@ -138,6 +138,7 @@ body {
   border-radius: 5px;
 }
 
+/* INTRO TEXT ANIMATION WHEN LOADING !INITIAL */
 .introAnimation {
   height: 50vh;
   width: 40%;
@@ -154,8 +155,6 @@ body {
   min-width: 88%;
   overflow: hidden;
   height: 27%;
-  /* border: 1px solid white; */
-  /* transform: translateX(47px); */
 }
 .introAnimation .introFirstPart h1 {
   transform: translateY(120px);
@@ -169,7 +168,7 @@ body {
   width: fit-content;
   overflow: hidden;
   height: 30%;
-  /* border: 1px solid rgb(235, 213, 14); */
+
   transform: translateX(10px);
   transform: translateY(-20px);
   color: gold;
@@ -194,6 +193,7 @@ body {
   display: block;
   transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+/* SELECTING AND ANIMATING THE BACKGROUND BLOB */
 .blobb {
   position: absolute;
   width: 400px;
@@ -203,7 +203,7 @@ body {
   animation: rotateBlob 17s alternate infinite;
 }
 @keyframes rotateBlob {
-  /* back and fourth 10deg and again back to 0, like this back and fourth rotation and pulsing scaling  every 10%*/
+  /* back and fourth ROTATION MOVEMENT WITH SOME SCALING*/
   0% {
     transform: rotate(0deg) scale(1);
   }
@@ -231,6 +231,7 @@ body {
   }
 }
 
+/* SELECTING AND ANIMATING WATCH */
 .displayWatch {
   display: flex;
   justify-content: center;
@@ -257,4 +258,14 @@ body {
   min-height: 100vh;
 
   scroll-snap-type: y mandatory;
+}
+
+.homeBranding {
+  position: fixed;
+  bottom: 40%;
+  font-size: 30px;
+  left: 43%;
+  transform: rotate(-90deg);
+  color: rgba(255, 255, 253, 0.39);
+  font-family: "DM Serif Text", serif;
 }

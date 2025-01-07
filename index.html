@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watchify</title>
     <link rel="stylesheet" href="./CSS/style.css" />
-    <script src="./JS/main.js"></script>
+    <!-- ALL JS EXCEPT INITIAL PHASE AND LOADING-->
+    <script type="text/javascript" src="./JS/main.js" defer></script>
     <style></style>
   </head>
   <body onload="loadingAnimation()" background-color="black" class="grayscale">
     <nav class="navigationBar" style="z-index: 999">
       <div class="nameLogo">
         <div class="logo">
-          <!-- PLACEHOLDER FOR LOGO-->
+          <!-- PLACEHOLDER FOR LOGO IF ANY-->
         </div>
         <div class="name">
           <span class="name"
@@ -142,6 +143,7 @@
                 fill="url(#gradient)"
               ></path>
             </svg>
+            <h2 class="homeBranding">ANARC</h2>
             <img
               class="displayWatch"
               src="./Assets/Images/AnarcTransparent.png"
@@ -152,6 +154,28 @@
             />
           </div>
         </div>
+        <div
+          class="bottomIntroText"
+          style="
+            display: flex;
+            width: 100%;
+            height: 74vh;
+            justify-content: center;
+            align-items: end;
+            font-family: 'Black Ops One', 'serif';
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.425);
+            opacity: 0;
+            transition: all 1s ease;
+            transition-delay: 0.3s;
+            transform: translateY(220px);
+          "
+        >
+          <h1>
+            Your <span style="color: gold">One-Stop</span> Shop for Timeless
+            Treasures.
+          </h1>
+        </div>
       </div>
     </main>
 
@@ -159,39 +183,7 @@
       <!-- aDDING SOME GAPS-->
       <br /><br /><br /><br />
       <div class="ProductsContent" style="scroll-snap-type: start">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nulla
-        placeat dolorum, earum atque neque, eligendi totam aut temporibus
-        cumque, quas error ex quis commodi officiis ut? Soluta, eveniet. Saepe
-        vitae rem maiores minima molestiae asperiores deleniti omnis illo
-        exercitationem, veritatis voluptas temporibus tempora cum. Ullam cum rem
-        delectus numquam eius natus modi, impedit officia perspiciatis pariatur
-        ab voluptas ipsum, blanditiis cumque labore deleniti deserunt suscipit
-        sapiente? Perferendis molestias repellat facilis fugit autem quibusdam
-        corrupti, saepe beatae, praesentium quasi deserunt laudantium id
-        maiores. Molestias magnam deserunt doloribus quia maiores molestiae enim
-        illo officiis, earum at dolore ex consequuntur aspernatur! Consequatur
-        officia sequi libero, ipsum illo odit error, doloremque, ut reiciendis
-        at similique aliquid ad voluptates ex consectetur aperiam! Molestiae
-        dolor praesentium maiores autem? Nihil libero dolores quasi nam, quam
-        necessitatibus vel eaque accusamus doloremque assumenda voluptatibus
-        optio consequuntur ex in molestias. Atque quam aut obcaecati in
-        assumenda alias distinctio veniam optio quae modi sequi blanditiis odit
-        amet, unde ducimus ipsa. Voluptates nihil, nostrum fugit veniam repellat
-        dolore dignissimos et animi iste, maxime pariatur? Qui aliquid vel optio
-        neque tempora doloremque facere quidem voluptatem sequi veniam, eveniet
-        autem tenetur cupiditate saepe at. Dicta excepturi veritatis quo porro,
-        nisi pariatur maxime minima accusantium laboriosam ullam nobis ad
-        voluptate perspiciatis impedit, itaque, reprehenderit dolorem quaerat
-        totam. Doloribus nostrum, rem dicta debitis pariatur eos eveniet
-        eligendi suscipit iusto praesentium corporis libero culpa aliquid
-        molestias quibusdam tempora quasi aspernatur ratione at dolor magnam.
-        Commodi nisi perferendis possimus laudantium quo, iure quia, veniam
-        quae, corporis nobis perspiciatis tenetur ratione? Ducimus harum vitae
-        modi laudantium cupiditate eius, deleniti dolores culpa nulla non
-        nostrum tempore ab dolor error vero repudiandae! Consequuntur officiis
-        quod officia vel nisi. Corrupti nostrum maxime non, iusto ex dignissimos
-        repellendus quae illo soluta rem eveniet, est accusantium consectetur
-        voluptas. Aspernatur corporis odio eligendi! Voluptatibus!
+        <!-- Products Section here -->
       </div>
     </div>
     <noscript>Please Enable JavaScript In Your Browser </noscript>
@@ -232,6 +224,14 @@
             .querySelector(".IntroWatch")
             .style.setProperty("transform", "translateX(0%)");
         }, 550);
+        setTimeout(() => {
+          document
+            .querySelector(".bottomIntroText")
+            .style.setProperty("opacity", "1");
+          document
+            .querySelector(".bottomIntroText")
+            .style.setProperty("transform", "translateY(0px)");
+        }, 1000);
       }
     </script>
   </body>
