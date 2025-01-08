@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Erica+One&family=Tsukimi+Rounded&display=swap");
 
+/* Setting some root variables */
 :root {
   --accent-color: #232927;
   --primary-text-color: #ffffff;
@@ -191,12 +192,13 @@ body {
 }
 .introWatchAnimation {
   display: block;
+  max-width: 30% !important;
   transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 /* SELECTING AND ANIMATING THE BACKGROUND BLOB */
 .blobb {
   position: absolute;
-  width: 400px;
+  width: 80%;
   height: 400px;
   right: 10%;
   top: -6%;
@@ -240,7 +242,7 @@ body {
   animation: pulseWatch 3.5s infinite;
   animation-delay: 0.8s;
 }
-
+/* watch scaling animation like pulse */
 @keyframes pulseWatch {
   0% {
     transform: scale(1);
