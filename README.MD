@@ -8,3 +8,5 @@
 - [x] Product page / website is divided into sections
 - [x] Scrolling feature is disabled
 - [x] Blob animation needs to be fixed
+- [x] Brands/Partners categories done
+- [ ]
