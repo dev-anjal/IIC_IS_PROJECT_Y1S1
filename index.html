@@ -29,11 +29,12 @@
           >
         </div>
       </div>
+      <!--!Replacing Brands With Research-->
       <div class="navigationButtons">
         <ul>
           <li><a href="#" class="navBtn">Home</a></li>
           <li><a href="#Products" class="navBtn">Products</a></li>
-          <li><a href="#" class="navBtn">Brands</a></li>
+          <li><a href="#Brands" class="navBtn">Brands</a></li>
           <li><a href="#" class="navBtn">About</a></li>
           <li><a href="#" class="navBtn">Blog</a></li>
           <li
@@ -105,6 +106,7 @@
         "
       >
         <!--TODO this is a product and needs to be linked to its official page-->
+
         <div
           class="IntroWatch"
           style="
@@ -180,14 +182,44 @@
     </main>
 
     <div id="Products">
-      <!-- aDDING SOME GAPS-->
+      <!-- ADDING SOME GAPS-->
       <br /><br /><br /><br />
       <div class="ProductsContent" style="scroll-snap-type: start">
         <!-- Products Section here -->
       </div>
     </div>
+
+    <!-- Brands Section Here -->
+    <div id="Brands">
+      <div class="ourPartnersTitle">
+        Our Partners<span
+          style="
+            color: gold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+            font-size: 2rem;
+          "
+          >.</span
+        >
+        <!-- <marquee behavior="" direction="right" style="width: 120vw"> -->
+        <div class="ourPartners">
+          <div class="partners partner1">Titan</div>
+          <div class="partners partner1">Anarc</div>
+          <div class="partners partner2">Rolex</div>
+          <div class="partners partner3">Casio</div>
+          <div class="partners partner4">Omega</div>
+        </div>
+        <!-- </marquee> -->
+      </div>
+    </div>
     <noscript>Please Enable JavaScript In Your Browser </noscript>
     <script type="text/javascript" defer>
+      // checking for double click in a buttons
+      document.querySelector(".navBtn").addEventListener("dblclick", () => {
+        alert("Maybe A Future Feature");
+        // change my url to a new page
+        window.location.href = "https://www.google.com";
+      });
       const btn = document.querySelectorAll(".navBtn");
       // adding activeNavigationButton class to the first button
       btn[0].classList.add("activeNavigationButton");

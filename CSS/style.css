@@ -271,3 +271,98 @@ body {
   color: rgba(255, 255, 253, 0.39);
   font-family: "DM Serif Text", serif;
 }
+
+.ourPartnersTitle {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+.ourPartners {
+  font-size: 2rem;
+  display: flex;
+  min-width: 100vw;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.partners {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  border: 1px solid white;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  height: fit-content;
+  width: fit-content;
+  padding: 15px 50px;
+  margin: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 1s ease;
+  overflow: hidden;
+  transform: translateY(0px), scale(1);
+  animation: partnerAnimate 9s alternate infinite;
+  animation-timing-function: linear;
+}
+/* slide animation */
+@keyframes partnerAnimate {
+  0% {
+    transform: translateX(-160px) scale(1);
+  }
+  100% {
+    transform: translateX(120px) scale(1);
+  }
+}
+/* .partners:hover {
+  cursor: pointer;
+  background-color: rgba(255, 217, 0, 0.452);
+  transition: all 0.3s ease-out;
+  transform: translateY(-5px);
+} */
+
+.partners::after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  background-color: rgba(251, 255, 0, 1);
+  position: absolute;
+  left: -45px;
+  bottom: -80px;
+  transform: translateY(170px);
+  overflow: hidden;
+  transition: 0.5s ease;
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
+.partners:hover::after {
+  content: "";
+  width: 290px;
+  height: 290px;
+  background-color: rgb(251, 255, 0, 1);
+  position: absolute;
+  left: -80x;
+  bottom: -80px;
+  transform: translateY(70px);
+  overflow: hidden;
+  transition: 0.5s ease;
+  opacity: 0.64;
+  z-index: -999;
+  border-radius: 50%;
+}
+.partners:hover {
+  transform: translateY(-5px) scale(1.04);
+  transition: all 0.1s ease-out;
+
+  color: var(--primary-text-hover-color);
+}
