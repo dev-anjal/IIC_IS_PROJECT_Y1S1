@@ -9,4 +9,5 @@
 - [x] Scrolling feature is disabled
 - [x] Blob animation needs to be fixed
 - [x] Brands/Partners categories done
-- [ ]
+- [ ] idk what am i currently doing
+

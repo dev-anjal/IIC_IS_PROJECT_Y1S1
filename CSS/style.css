@@ -7,22 +7,38 @@
   --primary-text-hover-color: #000;
   --primary-background-hover-color: rgba(255, 255, 255, 0.99);
 }
+/* Resetting all browser applied margin and padding to 0 */
 * {
   margin: 0;
   padding: 0;
 }
+/* making website scroll smoothly */
 
 html {
   scroll-behavior: smooth;
 }
-.greyscale {
-  border-image: linear-gradient(hsl(14, 86%, 53%), hsl(249, 94%, 42%));
+/* Home page background customization */
+.backgroundFixed {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
 }
-
+.backgroundFixed img {
+  width: 105%;
+  height: 100%;
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.3) blur(1px);
+  /* make it dark with filter */
+}
 body {
   font-family: "DM Serif Text", serif;
-  background-image: url(".././Assets/Images/watchBg.jpg");
-
+  background-image: url("../Assets/Images/second.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right;
@@ -191,7 +207,7 @@ body {
   display: none;
 }
 .introWatchAnimation {
-  display: block;
+  display: flex;
   max-width: 30% !important;
   transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

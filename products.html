@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // set 5 items with their name and price in cookie
+      document.cookie = "item1=Watch1; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+      document.cookie = "item2=Watch2; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+      document.cookie = "item3=Watch3; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+      document.cookie = "item4=Watch4; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+      document.cookie = "item5=Watch5; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+
+      // get all cookies
+      var allCookies = document.cookie;
+      var first_cookie = allCookies.split(";")[2];
+      first_cookie = first_cookie.split("=")[1];
+      console.log(first_cookie);
+    </script>
+  </body>
+</html>
