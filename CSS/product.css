@@ -42,7 +42,7 @@
   flex-direction: row;
   align-items: center;
   padding: 10px;
-  transform: scale(0.95);
+  transform: scale(0.89);
   width: 700px;
   height: 400px;
   /* min-height: fit-content; */
@@ -51,7 +51,6 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(87, 86, 84, 0.863);
   opacity: 0.97;
-
   gap: 40px;
   margin-bottom: 20px;
   position: relative;
@@ -68,6 +67,9 @@
 
   /* glowing subtle gold box shadow */
   box-shadow: 0 0 70px 10px rgba(255, 255, 255, 0.404);
+}
+.productContainer:hover .productImage img {
+  transform: scale(1.2) rotate(0deg) translateX(0px);
 }
 /* describing the image container */
 .productImage {
@@ -87,7 +89,7 @@
 }
 /* image behaviour while hover */
 .productImage img:hover {
-  transform: scale(1.5) rotate(10deg) translateX(-6px);
+  transform: scale(1.5) rotate(10deg) translateX(-6px) !important;
 }
 /* product details located aside / buttom depends it is in home page or not home page */
 .sideInfo {
