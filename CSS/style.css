@@ -19,21 +19,22 @@ html {
 }
 /* Home page background customization */
 .backgroundFixed {
-  width: 100%;
+  width: 105%;
   height: 100vh;
   position: absolute;
+  margin: 0;
 }
 .backgroundFixed img {
   width: 105%;
-  height: 100%;
+  height: 100vh;
   background-size: cover;
   object-fit: cover;
   position: relative;
+  margin: 0;
   top: 0;
   left: 0;
   z-index: -1;
-  filter: brightness(0.3) blur(1px);
-  /* make it dark with filter */
+  filter: brightness(0.45) blur(2.6px) saturate(2.5);
 }
 body {
   font-family: "DM Serif Text", serif;
@@ -271,20 +272,13 @@ body {
   }
 }
 
-#Products {
-  min-width: 100%;
-  min-height: 100vh;
-
-  scroll-snap-type: y mandatory;
-}
-
 .homeBranding {
   position: fixed;
   bottom: 40%;
   font-size: 30px;
   left: 43%;
   transform: rotate(-90deg);
-  color: rgba(255, 255, 253, 0.39);
+  color: rgba(255, 255, 253, 0.582);
   font-family: "DM Serif Text", serif;
 }
 
@@ -320,7 +314,7 @@ body {
   padding: 15px 50px;
   margin: 20px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.397);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Erica+One&family=Tsukimi+Rounded&display=swap");
+
+/* Making product section one full viewport width for snap scrolling */
+#Products {
+  min-width: 100%;
+  min-height: 130vh;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  position: relative;
+  margin-top: -16vh;
+}
+/* setting it's background */
+#Products .backgroundForProducts {
+  width: 105%;
+
+  min-height: 100vh;
+  background-size: cover;
+  object-fit: cover;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.47) blur(2.6px) saturate(0.7);
+}
+/* to keep product card organized */
+.productWrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* inside product card, alignment of side by side */
+.productContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  transform: scale(0.95);
+  width: 700px;
+  height: 400px;
+  /* min-height: fit-content; */
+  background-color: rgba(255, 255, 255, 0.63);
+  backdrop-filter: 80px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(87, 86, 84, 0.863);
+  opacity: 0.97;
+
+  gap: 40px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* linkto anothert site */
+
+/* describing the behaviour while hovering */
+.productContainer:hover {
+  transform: scale(0.99);
+  backdrop-filter: 80px;
+  background-color: rgba(255, 255, 255, 0.808);
+  opacity: 1;
+
+  /* glowing subtle gold box shadow */
+  box-shadow: 0 0 70px 10px rgba(255, 255, 255, 0.404);
+}
+/* describing the image container */
+.productImage {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* setting up the image layout */
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.875);
+}
+/* image behaviour while hover */
+.productImage img:hover {
+  transform: scale(1.5) rotate(10deg) translateX(-6px);
+}
+/* product details located aside / buttom depends it is in home page or not home page */
+.sideInfo {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.freeShippingLabel {
+  width: 40%;
+  height: 23px;
+  font-weight: 700;
+  background-color: rgb(17, 0, 255);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.productTitle h2 {
+  font-size: 25px;
+  font-weight: 900;
+  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+}
+.productPrevPrice {
+  font-size: 24px;
+  color: #383636d7;
+}
+.productPrice {
+  font-size: 35px;
+  color: #000000;
+  font-weight: bolder;
+}
+.hotLabel {
+  width: 50px;
+  height: 30px;
+  font-weight: 800;
+  background-color: red;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 18px;
+  left: 0px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.offerDesc {
+  font-size: 13px;
+  color: #424040f3;
+}
+.addToCard button {
+  width: 80%;
+  height: 40px;
+  background-color: rgb(255, 217, 0);
+  color: #000000;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 5px 0px rgb(109, 109, 106);
+  transition: all 0.1s ease;
+}
+.addToCard button:active {
+  box-shadow: 0px 0px 0px rgba(238, 255, 0, 0.842);
+  transform: translateY(3px);
+}
+.wishList {
+  width: 37.5%;
+  height: 40px;
+  background-color: transparent;
+  color: #000000;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  font-size: medium;
+}
+.wishList::before {
+  content: "🤍 ";
+  margin-right: 5px;
+  transition: all 0.1s ease;
+}
+.wishList:hover::before {
+  opacity: 0.5;
+
+  display: inline;
+  content: "❤️ ";
+}
+.wishList:focus::before {
+  opacity: 1;
+  display: inline;
+
+  content: "❤️ ";
+}
+.availibilityLight {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(31, 218, 31);
+  border-radius: 50%;
+}
+.stockAvailibility {
+  font-size: 15px;
+  color: #000000;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-weight: 600;
+}
+.enquiry {
+  width: 37.5%;
+  height: 40px;
+  background-color: transparent;
+  color: #000000;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  font-size: medium;
+}
+.wishListAndEnquiry {
+  display: flex;
+  gap: 5%;
+}

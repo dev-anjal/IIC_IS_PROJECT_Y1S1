@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watchify</title>
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/product.css" />
     <!-- ALL JS EXCEPT INITIAL PHASE AND LOADING-->
     <script type="text/javascript" src="./JS/main.js" defer></script>
     <style></style>
   </head>
   <body onload="loadingAnimation()" background-color="black" class="grayscale">
-    <div class="backgroundFixed">
+    <div
+      class="backgroundFixed"
+      style="max-height: 100vh !important; z-index: -1"
+    >
       <img src="./Assets/Images/third.jpg" alt="" />
     </div>
     <nav class="navigationBar" style="z-index: 999">
@@ -70,6 +74,7 @@
     <!--Main Content-->
 
     <main
+      class="sectionnn"
       style="
         display: block;
         width: 100%;
@@ -108,8 +113,6 @@
           transform: translateY(0px);
         "
       >
-        <!--TODO this is a product and needs to be linked to its official page-->
-
         <div
           class="IntroWatch"
           style="
@@ -134,11 +137,11 @@
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop
                     offset="0%"
-                    style="stop-color: rgba(247, 214, 24, 0.568)"
+                    style="stop-color: rgba(223, 191, 14, 0.733)"
                   ></stop>
                   <stop
                     offset="100%"
-                    style="stop-color: rgba(74, 80, 42, 0.459)"
+                    style="stop-color: rgba(123, 131, 77, 0.637)"
                   ></stop>
                 </linearGradient>
               </defs>
@@ -169,7 +172,7 @@
             align-items: end;
             font-family: 'Black Ops One', 'serif';
             font-size: 17px;
-            color: rgba(255, 255, 255, 0.425);
+            color: rgba(255, 255, 255, 0.582);
             opacity: 0;
             transition: all 1s ease;
             transition-delay: 0.3s;
@@ -177,23 +180,159 @@
           "
         >
           <h1>
-            Your <span style="color: gold">One-Stop</span> Shop for Timeless
-            Treasures.
+            Your
+            <span style="color: rgba(255, 217, 0, 0.932); opacity: 1"
+              >One-Stop</span
+            >
+            Shop for Timeless Treasures<span
+              style="color: rgba(255, 217, 0, 0.877)"
+              >.</span
+            >
           </h1>
         </div>
       </div>
     </main>
 
-    <div id="Products">
-      <!-- ADDING SOME GAPS-->
-      <br /><br /><br /><br />
-      <div class="ProductsContent" style="scroll-snap-type: start">
-        <!-- Products Section here -->
+    <div id="Products" class="sectionnn">
+      <div class="productWrapper">
+        <img
+          class="backgroundForProducts"
+          src="./Assets/Images/second.jpg"
+          alt=""
+          style="margin-top: -10px"
+        />
+        <!-- ADDING SOME GAPS-->
+        <br /><br /><br /><br />
+        <!-- First Product name= Anarc watch 2024 -->
+        <div class="ProductsContent" style="scroll-snap-type: start">
+          <!-- Products Section here -->
+          <div class="productContainer">
+            <div class="hotLabel">Hot</div>
+            <div class="productImage" style="transform: scale(1.1)">
+              <img src="./Assets/Images/AnarcTransparent.png" alt="" />
+            </div>
+            <div class="sideInfo">
+              <div class="freeShippingLabel">Free Shipping</div>
+              <div class="productTitle">
+                <h2>Anarc Smart watch Aluminum build 2024</h2>
+              </div>
+              <div class="productPrevPrice">
+                <small><s>रु 8,999</s></small>
+              </div>
+              <div class="productPrice">रु 7,999</div>
+              <div class="offerDesc">The offer is valid until Feb 10!</div>
+              <div class="addToCard"><button>Add to cart</button></div>
+              <div class="stockAvailibility">
+                <div class="availibilityLight"></div>
+                20+ pcs. in stock
+              </div>
+              <div class="wishListAndEnquiry">
+                <button class="enquiry">🤔 Enquiry</button>
+                <button class="wishList">wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Second Product Rolex gold model-->
+        <div class="ProductsContent" style="scroll-snap-type: start">
+          <!-- Products Section here -->
+          <div class="productContainer">
+            <div class="hotLabel">Hot</div>
+            <div
+              class="productImage"
+              style="transform: rotate(5deg) scale(0.9)"
+            >
+              <img src="./Assets/Images/rolex.png" alt="" />
+            </div>
+            <div class="sideInfo">
+              <div class="freeShippingLabel">Free Shipping</div>
+              <div class="productTitle">
+                <h2>Rolex Gold Strap Gold inner Model 2018</h2>
+              </div>
+              <div class="productPrevPrice">
+                <small><s>रु 7,26,700</s></small>
+              </div>
+              <div class="productPrice">
+                रु 6<small>,</small>26<small>,</small>700
+              </div>
+              <div class="offerDesc">The offer is valid until Feb 10!</div>
+              <div class="addToCard"><button>Add to cart</button></div>
+              <div class="stockAvailibility">
+                <div class="availibilityLight"></div>
+                20+ pcs. in stock
+              </div>
+              <div class="wishListAndEnquiry">
+                <button class="enquiry">🤔 Enquiry</button>
+                <button class="wishList">wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Third Product casio black strap-->
+        <div class="ProductsContent" style="scroll-snap-type: start">
+          <!-- Products Section here -->
+          <div class="productContainer">
+            <div class="hotLabel">Hot</div>
+            <div class="productImage" style="transform: scale(0.85)">
+              <img src="./Assets/Images/casio.png" alt="" />
+            </div>
+            <div class="sideInfo">
+              <div class="freeShippingLabel">Free Shipping</div>
+              <div class="productTitle">
+                <h2>Casio G-shock digital watch model 2020</h2>
+              </div>
+              <div class="productPrevPrice">
+                <small><s>रु 4,279</s></small>
+              </div>
+              <div class="productPrice">रु 3,350</div>
+              <div class="offerDesc">The offer is valid until Feb 10!</div>
+              <div class="addToCard"><button>Add to cart</button></div>
+              <div class="stockAvailibility">
+                <div class="availibilityLight"></div>
+                20+ pcs. in stock
+              </div>
+              <div class="wishListAndEnquiry">
+                <button class="enquiry">🤔 Enquiry</button>
+                <button class="wishList">wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fourth Product -->
+        <div class="ProductsContent" style="scroll-snap-type: start">
+          <!-- Products Section here -->
+          <div class="productContainer">
+            <div class="hotLabel">Hot</div>
+            <div class="productImage" style="transform: scale(0.81)">
+              <img src="./Assets/Images/titan.png" alt="" />
+            </div>
+            <div class="sideInfo">
+              <div class="freeShippingLabel">Free Shipping</div>
+              <div class="productTitle">
+                <h2>Titan Timeless Style Watch:Refined Black Dial</h2>
+              </div>
+              <div class="productPrevPrice">
+                <small><s>रु 8,999</s></small>
+              </div>
+              <div class="productPrice">रु 7,999</div>
+              <div class="offerDesc">The offer is valid until Feb 10!</div>
+              <div class="addToCard"><button>Add to cart</button></div>
+              <div class="stockAvailibility">
+                <div class="availibilityLight"></div>
+                20+ pcs. in stock
+              </div>
+              <div class="wishListAndEnquiry">
+                <button class="enquiry">🤔 Enquiry</button>
+                <button class="wishList">wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Brands Section Here -->
-    <div id="Brands">
+    <div id="Brands" class="sectionnn">
       <div class="ourPartnersTitle">
         Our Partners<span
           style="

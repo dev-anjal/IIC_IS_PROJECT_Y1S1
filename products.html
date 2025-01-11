@@ -4,21 +4,205 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Erica+One&family=Tsukimi+Rounded&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* border: 1px solid red; */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #c7bbbb;
+      }
+      .productContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 800px;
+        height: 400px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(87, 86, 84, 0.863);
+        gap: 30px;
+        position: relative;
+      }
+      .productImage {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .productImage img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: scale(1.2);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.875);
+      }
+      .productImage img:hover {
+        transform: scale(1.5) rotate(10deg) translateX(-6px);
+      }
+      .sideInfo {
+        width: 50%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .freeShippingLabel {
+        width: 40%;
+        height: 23px;
+        font-weight: 700;
+        background-color: rgb(17, 0, 255);
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+      }
+      .productTitle h2 {
+        font-size: 25px;
+        font-weight: 900;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .productPrevPrice {
+        font-size: 19px;
+        color: #383636d7;
+      }
+      .productPrice {
+        font-size: 35px;
+        color: #000000;
+        font-weight: bolder;
+      }
+      .hotLabel {
+        width: 50px;
+        height: 30px;
+        font-weight: 800;
+        background-color: red;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 18px;
+        left: 0px;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+      }
+      .offerDesc {
+        font-size: 13px;
+        color: #424040f3;
+      }
+      .addToCard button {
+        width: 80%;
+        height: 40px;
+        background-color: rgb(255, 217, 0);
+        color: #000000;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 5px 0px rgb(109, 109, 106);
+        transition: all 0.1s ease;
+      }
+      .addToCard button:active {
+        box-shadow: 0px 0px 0px rgba(238, 255, 0, 0.842);
+        transform: translateY(3px);
+      }
+      .wishList {
+        width: 37.5%;
+        height: 40px;
+        background-color: transparent;
+        color: #000000;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid #000000;
+        font-size: medium;
+      }
+      .wishList::before {
+        content: "🤍 ";
+        margin-right: 5px;
+      }
+      .wishList:hover::before {
+        opacity: 0.6;
+        display: inline;
+        content: "❤️ ";
+      }
+      .wishList:focus::before {
+        opacity: 1;
+        display: inline;
+        content: "❤️ ";
+      }
+      .availibilityLight {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(31, 218, 31);
+        border-radius: 50%;
+      }
+      .stockAvailibility {
+        font-size: 15px;
+        color: #000000;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-weight: 600;
+      }
+      .enquiry {
+        width: 37.5%;
+        height: 40px;
+        background-color: transparent;
+        color: #000000;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid #000000;
+        font-size: medium;
+      }
+      .wishListAndEnquiry {
+        display: flex;
+        gap: 5%;
+      }
+    </style>
   </head>
   <body>
-    <script>
-      // set 5 items with their name and price in cookie
-      document.cookie = "item1=Watch1; expires=Thu, 18 Dec 2025 12:00:00 UTC";
-      document.cookie = "item2=Watch2; expires=Thu, 18 Dec 2025 12:00:00 UTC";
-      document.cookie = "item3=Watch3; expires=Thu, 18 Dec 2025 12:00:00 UTC";
-      document.cookie = "item4=Watch4; expires=Thu, 18 Dec 2025 12:00:00 UTC";
-      document.cookie = "item5=Watch5; expires=Thu, 18 Dec 2025 12:00:00 UTC";
-
-      // get all cookies
-      var allCookies = document.cookie;
-      var first_cookie = allCookies.split(";")[2];
-      first_cookie = first_cookie.split("=")[1];
-      console.log(first_cookie);
-    </script>
+    <div class="productContainer">
+      <div class="hotLabel">Hot</div>
+      <div class="productImage">
+        <img src="./Assets/Images/AnarcTransparent.png" alt="" />
+      </div>
+      <div class="sideInfo">
+        <div class="freeShippingLabel">Free Shipping</div>
+        <div class="productTitle">
+          <h2>Anarc Smart watch Aluminum build 2024</h2>
+        </div>
+        <div class="productPrevPrice">
+          <small><s>रु 8,999</s></small>
+        </div>
+        <div class="productPrice">रु 7,999</div>
+        <div class="offerDesc">The offer is valid until Feb 10!</div>
+        <div class="addToCard"><button>Add to cart</button></div>
+        <div class="stockAvailibility">
+          <div class="availibilityLight"></div>
+          20+ pcs. in stock
+        </div>
+        <div class="wishListAndEnquiry">
+          <button class="enquiry">🤔 Enquiry</button>
+          <button class="wishList">wishlist</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
