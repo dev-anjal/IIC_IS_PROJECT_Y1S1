@@ -2,21 +2,20 @@
 
 /* Making product section one full viewport width for snap scrolling */
 #Products {
-  min-width: 100%;
+  width: 100%;
   min-height: 130vh;
-
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 70px;
+
   position: relative;
-  margin-top: -16vh;
+  margin-top: -17vh;
 }
 /* setting it's background */
 #Products .backgroundForProducts {
   width: 105%;
-
+  height: 100vh;
   min-height: 100vh;
   background-size: cover;
   object-fit: cover;
@@ -24,16 +23,68 @@
   margin: 0;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   z-index: -1;
   filter: brightness(0.47) blur(2.6px) saturate(0.7);
 }
 /* to keep product card organized */
 .productWrapper {
-  margin-top: 50px;
+  margin-top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  transform: translateX(50vw);
+  /* transform: translateX(250vw); */
+  /* making animation really really smooth */
+  animation-name: animateProduct;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+}
+@keyframes animateProduct {
+  0% {
+    transform: translateX(150vw);
+  }
+  23% {
+    transform: translateX(150vw);
+  }
+  25% {
+    transform: translateX(50vw);
+  }
+  47% {
+    transform: translateX(50vw);
+  }
+  50% {
+    transform: translateX(-50vw);
+  }
+  73% {
+    transform: translateX(-50vw);
+  }
+  75% {
+    transform: translateX(-150vw);
+  }
+  100% {
+    transform: translateX(-150vw);
+  }
+}
+.productWrapper:has(.productContainer:hover) {
+  animation-play-state: paused;
+}
+
+.ProductsContent {
+  /* border: 1px solid #000000; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  min-width: 100vw;
+  /* background-color: rosybrown; */
+  height: 100vh;
 }
 /* inside product card, alignment of side by side */
 .productContainer {
@@ -42,7 +93,7 @@
   flex-direction: row;
   align-items: center;
   padding: 10px;
-  transform: scale(0.89);
+  transform: scale(1.1);
   width: 700px;
   height: 400px;
   /* min-height: fit-content; */
@@ -51,7 +102,6 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(87, 86, 84, 0.863);
   opacity: 0.97;
-  gap: 40px;
   margin-bottom: 20px;
   position: relative;
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -60,7 +110,7 @@
 
 /* describing the behaviour while hovering */
 .productContainer:hover {
-  transform: scale(0.99);
+  transform: scale(1.16);
   backdrop-filter: 80px;
   background-color: rgba(255, 255, 255, 0.808);
   opacity: 1;
