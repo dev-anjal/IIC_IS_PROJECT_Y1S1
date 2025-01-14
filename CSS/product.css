@@ -15,7 +15,7 @@
 /* setting it's background */
 #Products .backgroundForProducts {
   width: 105%;
-  height: 100vh;
+  height: 130vh;
   min-height: 100vh;
   background-size: cover;
   object-fit: cover;
@@ -26,7 +26,7 @@
   bottom: 0;
   right: 0;
   z-index: -1;
-  filter: brightness(0.47) blur(2.6px) saturate(0.7);
+  filter: brightness(0.37) blur(2.6px) saturate(0.7);
 }
 /* to keep product card organized */
 .productWrapper {

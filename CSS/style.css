@@ -1,3 +1,4 @@
+/* Importing google fonts from fonts.google.com */
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Erica+One&family=Tsukimi+Rounded&display=swap");
 
 /* Setting some root variables */
@@ -24,6 +25,7 @@ html {
   position: absolute;
   margin: 0;
 }
+/* setting up top portion background */
 .backgroundFixed img {
   width: 105%;
   height: 100vh;
@@ -34,11 +36,17 @@ html {
   top: 0;
   left: 0;
   z-index: -1;
-  filter: brightness(0.45) blur(2.6px) saturate(2.5);
+  filter: brightness(0.68) blur(2.7px) saturate(1.1) contrast(1.09);
 }
+/* setting up  body's background */
 body {
   font-family: "DM Serif Text", serif;
-  background-image: url("../Assets/Images/second.jpg");
+  background: linear-gradient(
+    90deg,
+    rgb(39, 38, 38),
+    rgb(98, 114, 53),
+    rgb(187, 176, 18)
+  );
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -49,6 +57,7 @@ body {
   /* overflow: hidden; */
 }
 
+/* setting up the navbar */
 .navigationBar {
   display: flex;
   height: 75px;
@@ -71,6 +80,7 @@ body {
   backdrop-filter: blur(7px);
   transition: 0.8s ease;
 }
+/* aligning Watchify logo */
 
 .navigationBar .nameLogo {
   display: flex;
@@ -78,6 +88,7 @@ body {
   align-items: center;
   color: aliceblue;
 }
+
 .navigationBar .nameLogo .name {
   color: var(--primary-text-color);
   font-size: 32px;
@@ -86,6 +97,7 @@ body {
   letter-spacing: 1.1px;
   cursor: pointer;
 }
+/* nav btn's placements */
 .navigationButtons ul {
   display: flex;
   list-style: none;
@@ -93,6 +105,7 @@ body {
   padding: 5px 10px;
   margin: 0 50px 0 50px;
 }
+/* nav btn's styling */
 .navigationButtons ul .navBtn {
   margin: 0 10px;
   cursor: pointer;
@@ -108,6 +121,7 @@ body {
   position: relative;
   color: aliceblue;
 }
+/* when js injects active class to nav's btn class */
 .navigationButtons ul .activeNavigationButton {
   color: var(--primary-text-hover-color);
   background-color: var(--primary-background-hover-color);
