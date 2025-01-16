@@ -67,12 +67,13 @@ body {
   color: var(--primary-text-color);
   overflow-x: hidden;
   transition: 0.9s ease;
+  background-color: #c7c3c3ef;
   background: linear-gradient(
     135deg,
-    #015733a6,
-    #027e69b0,
-    #9e8703bd,
-    #849b029c
+    #015733ad,
+    #027e6993,
+    #9e87039d,
+    #849b02b4
   );
   background-size: 400% 400%;
   background-position: 30% 50%;

@@ -97,7 +97,11 @@
   width: 700px;
   height: 400px;
   /* min-height: fit-content; */
-  background-color: rgb(230, 227, 227);
+  background: linear-gradient(
+    90deg,
+    rgba(160, 144, 54, 0.5) 0%,
+    rgba(107, 207, 160, 0.651) 100%
+  );
   backdrop-filter: 80px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(87, 86, 84, 0.863);
@@ -112,7 +116,11 @@
 .productContainer:hover {
   transform: scale(1.16);
   backdrop-filter: 80px;
-  background-color: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(219, 199, 86, 0.678) 0%,
+    rgba(120, 221, 174, 0.747) 100%
+  );
   opacity: 1;
 
   /* glowing subtle gold box shadow */
