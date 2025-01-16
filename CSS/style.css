@@ -45,10 +45,8 @@ html {
 .backgroundFixed img {
   width: 105%;
   height: 100vh;
-
-  object-fit: cover;
   position: relative;
-  background-position: center;
+  background-position: cover;
   margin: 0;
   top: 0;
   left: 0;
@@ -62,142 +60,20 @@ body {
   z-index: 9999;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: right;
+
   color: var(--primary-text-color);
   overflow-x: hidden;
   transition: 0.9s ease;
   background-color: #c7c3c3ef;
-  background: linear-gradient(
-    135deg,
-    #015733ad,
-    #027e6993,
-    #9e87039d,
-    #849b02b4
-  );
+  background: linear-gradient(135deg, #03331f, #027763dc, #443a01bb, #6d8002b4);
   background-size: 400% 400%;
   background-position: 30% 50%;
-  /* animation: gradientAnimation 15s alternate ease infinite; */
+
   /* overflow: hidden; */
-}
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  overflow-x: hidden;
 }
 
 /* setting up the navbar */
-.navigationBar {
-  display: flex;
-  height: 75px;
-  width: 100%;
-  background: var(--accent-color);
-  /* border-bottom: 1.2px solid rgba(255, 255, 255, 0.137); */
-  align-items: center;
-  justify-content: space-between;
-  /* fixing the navbar at the top permanently */
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  /* setting padding for : top right bottom left */
-  padding: 0 50px 0 50px;
-  /* allow items to take more than one line if they dont fit in a single line */
-  flex-wrap: wrap;
-  /*creating a slide down animation when loading the page */
-  transform: translateY(-100%);
-  backdrop-filter: blur(7px);
-  transition: 0.8s ease;
-}
-/* aligning Watchify logo */
-
-.navigationBar .nameLogo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--accent-text-color);
-}
-
-.navigationBar .nameLogo .name {
-  color: var(--primary-text-color);
-  font-size: 30px;
-  font-weight: 750;
-  font-family: "DM Serif Text", serif;
-  letter-spacing: 1.1px;
-  cursor: pointer;
-}
-/* nav btn's placements */
-.navigationButtons ul {
-  display: flex;
-  list-style: none;
-  flex-wrap: wrap;
-  padding: 5px 10px;
-  margin: 0 50px 0 50px;
-}
-/* nav btn's styling */
-.navigationButtons ul .navBtn {
-  margin: 0 10px;
-  cursor: pointer;
-  color: var(--primary-text-color);
-  font-size: 20px;
-  font-family: "Tsukimi Rounded", serif;
-  border-radius: 5px;
-  padding: 5px 10px;
-  text-decoration: none;
-  font-family: "Tsukimi Rounded", serif;
-  font-weight: bolder;
-  transition: 0.2s ease-in-out;
-  position: relative;
-
-  color: var(--primary-text-color);
-}
-/* when js injects active class to nav's btn class */
-.navigationButtons ul .activeNavigationButton {
-  color: var(--primary-text-hover-color);
-  background-color: var(--primary-background-hover-color);
-  color: #0e0d0d;
-}
-
-.navigationButtons ul li .navBtn::after {
-  content: "";
-  width: 0%;
-  height: 1.6px;
-  background-color: var(--accent-color);
-  position: absolute;
-  bottom: 3px;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.25s ease;
-  opacity: 0.1;
-}
-.navigationButtons ul li .navBtn:hover::after {
-  content: "";
-  width: 72%;
-  margin: auto;
-  height: 1.6px;
-  background-color: var(--accent-color);
-  position: absolute;
-  bottom: 3px;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.8;
-}
-.navigationButtons ul li a:hover {
-  color: var(--primary-text-hover-color);
-  background-color: var(--primary-background-hover-color);
-}
-.navigationButtons ul li a:hover .cartIcon {
-  fill: var(--primary-text-hover-color);
-  border-radius: 5px;
-}
 
 /* INTRO TEXT ANIMATION WHEN LOADING !INITIAL */
 .introAnimation {

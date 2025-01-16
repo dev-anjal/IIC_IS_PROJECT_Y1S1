@@ -12,8 +12,11 @@
     <title>Watchify</title>
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="stylesheet" href="./CSS/product.css" />
+    <link rel="stylesheet" href="./CSS/navBar.css" />
     <!-- add icon -->
     <link rel="shortcut icon" href="Assets/Icons/logo.ico" type="image/ico" />
+       <!-- ALL EXTERNAL JS-->
+       <script type="text/javascript" src="./JS/main.js" defer></script>
 
     <!-- Footer Design with Internal CSS -->
     <style>
@@ -130,9 +133,8 @@
 
     </style>
 
-    <!-- ALL JS EXCEPT INITIAL PHASE AND LOADING-->
-    <script type="text/javascript" src="./JS/main.js" defer></script>
-    <style></style>
+ 
+  
   </head>
   <body onload="loadingAnimation()" background-color="black" class="grayscale">
     <div
@@ -552,7 +554,7 @@
       document.querySelector(".navBtn").addEventListener("dblclick", () => {
         alert("Maybe A Future Feature");
         // change my url to a new page
-        window.location.href = "https://www.google.com";
+        // window.location.href = "https://www.google.com";
       });
       const btn = document.querySelectorAll(".navBtn");
       // adding activeNavigationButton class to the first button
@@ -568,37 +570,7 @@
       });
 
       // creating a loading animation when website is loading
-      function loadingAnimation() {
-        setTimeout(() => {
-          console.log("loading function is called");
-          document.querySelector(".navigationBar").style.transform =
-            "translateY(0px)";
-        }, 130);
-
-        setTimeout(() => {
-          document
-            .querySelector(".introFirstText")
-            .classList.add("rollTheIntro");
-        }, 260);
-        setTimeout(() => {
-          document
-            .querySelector(".introSecondText")
-            .classList.add("slideIntroText");
-        }, 500);
-        setTimeout(() => {
-          document
-            .querySelector(".IntroWatch")
-            .style.setProperty("transform", "translateX(0%)");
-        }, 550);
-        setTimeout(() => {
-          document
-            .querySelector(".bottomIntroText")
-            .style.setProperty("opacity", "1");
-          document
-            .querySelector(".bottomIntroText")
-            .style.setProperty("transform", "translateY(0px)");
-        }, 1000);
-      }
+     
     </script>
   </body>
 </html>
