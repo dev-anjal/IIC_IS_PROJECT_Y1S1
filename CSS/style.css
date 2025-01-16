@@ -3,8 +3,24 @@
 
 /* Setting some root variables */
 :root {
-  --accent-color: #232927;
+  --accent-color: #00674f;
+  --accent-color-light: #0bd4a5;
+  --accent-text-color: gold;
   --primary-text-color: #ffffff;
+  --background-color: rgba(0, 0, 0, 0.397);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --box-shadow-color: rgba(0, 0, 0, 0.5);
+  --hover-background-color: rgba(255, 217, 0, 0.452);
+  --hover-after-background-color: rgba(251, 255, 0, 1);
+  --intro-first-part-color: beige;
+  --intro-second-part-color: gold;
+  --home-branding-color: rgba(255, 255, 253, 0.582);
+  --our-partners-title-color: #ffffff;
+  --partners-background-color: rgba(0, 0, 0, 0.397);
+  --partners-border-color: rgba(255, 255, 255, 0.1);
+  --partners-box-shadow-color: rgba(0, 0, 0, 0.5);
+  --partners-hover-after-background-color: rgb(251, 255, 0, 1);
+  --partners-hover-color: var(--primary-text-hover-color);
   --primary-text-hover-color: #000;
   --primary-background-hover-color: rgba(255, 255, 255, 0.99);
 }
@@ -29,24 +45,21 @@ html {
 .backgroundFixed img {
   width: 105%;
   height: 100vh;
-  background-size: cover;
+
   object-fit: cover;
   position: relative;
+  background-position: center;
   margin: 0;
   top: 0;
   left: 0;
   z-index: -1;
-  filter: brightness(0.68) blur(2.7px) saturate(1.1) contrast(1.09);
+  filter: brightness(0.47) saturate(0.9) contrast(1.4);
 }
 /* setting up  body's background */
 body {
   font-family: "DM Serif Text", serif;
-  background: linear-gradient(
-    90deg,
-    rgb(39, 38, 38),
-    rgb(98, 114, 53),
-    rgb(187, 176, 18)
-  );
+  /* background-color: wheat; */
+  z-index: 9999;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -54,7 +67,28 @@ body {
   color: var(--primary-text-color);
   overflow-x: hidden;
   transition: 0.9s ease;
+  background: linear-gradient(
+    135deg,
+    #015733a6,
+    #027e69b0,
+    #9e8703bd,
+    #849b029c
+  );
+  background-size: 400% 400%;
+  background-position: 30% 50%;
+  /* animation: gradientAnimation 15s alternate ease infinite; */
   /* overflow: hidden; */
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* setting up the navbar */
@@ -62,8 +96,8 @@ body {
   display: flex;
   height: 75px;
   width: 100%;
-  background: rgba(90, 89, 86, 0.288);
-  border-bottom: 1.2px solid rgba(255, 255, 255, 0.137);
+  background: var(--accent-color);
+  /* border-bottom: 1.2px solid rgba(255, 255, 255, 0.137); */
   align-items: center;
   justify-content: space-between;
   /* fixing the navbar at the top permanently */
@@ -86,13 +120,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: aliceblue;
+  color: var(--accent-text-color);
 }
 
 .navigationBar .nameLogo .name {
   color: var(--primary-text-color);
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 750;
   font-family: "DM Serif Text", serif;
   letter-spacing: 1.1px;
   cursor: pointer;
@@ -119,7 +153,8 @@ body {
   font-weight: bolder;
   transition: 0.2s ease-in-out;
   position: relative;
-  color: aliceblue;
+
+  color: var(--primary-text-color);
 }
 /* when js injects active class to nav's btn class */
 .navigationButtons ul .activeNavigationButton {
@@ -132,7 +167,7 @@ body {
   content: "";
   width: 0%;
   height: 1.6px;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--accent-color);
   position: absolute;
   bottom: 3px;
   left: 50%;
@@ -146,7 +181,7 @@ body {
   width: 72%;
   margin: auto;
   height: 1.6px;
-  background-color: rgb(9, 102, 97);
+  background-color: var(--accent-color);
   position: absolute;
   bottom: 3px;
   left: 50%;
@@ -176,7 +211,7 @@ body {
 }
 .introAnimation .introFirstPart {
   border-bottom-right-radius: 77%;
-  font-size: 38px;
+  font-size: 37px;
   min-width: 88%;
   overflow: hidden;
   height: 27%;
@@ -184,19 +219,20 @@ body {
 .introAnimation .introFirstPart h1 {
   transform: translateY(120px);
   font-family: "Black Ops One", sans-serif;
-  color: beige;
+  font-weight: 10;
+  color: var(--intro-first-part-color);
 }
 .introSecondPart {
   display: flex;
   flex-wrap: wrap;
-  font-size: 24px;
+  font-size: 23px;
   width: fit-content;
   overflow: hidden;
   height: 30%;
 
   transform: translateX(10px);
   transform: translateY(-20px);
-  color: gold;
+  color: var(--intro-second-part-color);
 }
 .introAnimation .introSecondPart h1 {
   transform: translateX(120%);
@@ -285,7 +321,7 @@ body {
   font-size: 30px;
   left: 43%;
   transform: rotate(-90deg);
-  color: rgba(255, 255, 253, 0.582);
+  color: var(--home-branding-color);
   font-family: "DM Serif Text", serif;
 }
 
@@ -312,7 +348,7 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  border: 1px solid white;
+  border: 1px solid var(--partners-border-color);
   font-size: 1.5rem;
   cursor: pointer;
 
@@ -324,7 +360,7 @@ body {
   background: rgba(0, 0, 0, 0.397);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px var(--box-shadow-color);
   transition: 1s ease;
   overflow: hidden;
   transform: translateY(0px), scale(1);
@@ -351,7 +387,7 @@ body {
   content: "";
   width: 200px;
   height: 200px;
-  background-color: rgba(251, 255, 0, 1);
+  background-color: var(--accent-color-light);
   position: absolute;
   left: -45px;
   bottom: -80px;
@@ -366,7 +402,7 @@ body {
   content: "";
   width: 290px;
   height: 290px;
-  background-color: rgb(251, 255, 0, 1);
+  background-color: var(--accent-color-light);
   position: absolute;
   left: -80x;
   bottom: -80px;
@@ -381,5 +417,5 @@ body {
   transform: translateY(-5px) scale(1.04);
   transition: all 0.1s ease-out;
 
-  color: var(--primary-text-hover-color);
+  color: var(--primary-text-color);
 }
