@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // fetch html from products.html file with async
+
+      async function fetchHtmlAsText(url) {
+        return await (await fetch(url)).text();
+      }
+      fetchHtmlAsText("products.html").then((html) => {
+        console.log(html);
+        document.body.innerHTML = html;
+      });
+    </script>
+  </body>
+</html>
