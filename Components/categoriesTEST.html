@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories test</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .categoriesContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .innercatWrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 89%;
+        height: 80%;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
+
+      .categories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 216px;
+        height: 210px;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .categories img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .categories:hover {
+        transform: scale(1.1);
+      }
+
+      .categories h3 {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="categoriesContainer">
+      <div class="innercatWrapper" style="position: relative">
+        <div style="position: absolute; top: 70px">
+          <h1 style="font-family: 'Courier New', Courier, monospace">
+            Categories<span style="color: gold">.</span>
+          </h1>
+        </div>
+        <div class="categories cat1">
+          <img src="../Assets/Images/titan.png" alt="" />
+          <h3>Modern</h3>
+        </div>
+        <div class="categories cat2">
+          <img src="../Assets/Images/titan.png" alt="" />
+          <h3>Vintage</h3>
+        </div>
+        <div class="categories cat3">
+          <img src="../Assets/Images/titan.png" alt="" />
+          <h3>Minimal</h3>
+        </div>
+        <div class="categories cat4">
+          <img src="../Assets/Images/titan.png" alt="" />
+          <h3>Fit Band</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

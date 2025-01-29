@@ -60,12 +60,11 @@ body {
   z-index: 9999;
   background-size: cover;
   background-repeat: no-repeat;
-
   color: var(--primary-text-color);
   overflow-x: hidden;
   transition: 0.9s ease;
-  background-color: #c7c3c3ef;
-  background: linear-gradient(135deg, #03331f, #027763dc, #443a01bb, #6d8002b4);
+  background-color: #f0f0f0;
+  /* background: linear-gradient(135deg, #03331f, #027763dc, #443a01bb, #6d8002b4); */
   background-size: 400% 400%;
   background-position: 30% 50%;
 
@@ -211,6 +210,7 @@ body {
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
+  color: black;
 }
 .ourPartners {
   font-size: 2rem;
@@ -220,6 +220,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  color: rgb(255, 255, 255);
 }
 .partners {
   display: flex;
@@ -234,7 +235,7 @@ body {
   padding: 15px 50px;
   margin: 20px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.397);
+  background: rgba(0, 0, 0, 0.801);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 10px var(--box-shadow-color);
@@ -280,19 +281,21 @@ body {
   width: 290px;
   height: 290px;
   background-color: var(--accent-color-light);
+
   position: absolute;
   left: -80x;
   bottom: -80px;
   transform: translateY(70px);
   overflow: hidden;
   transition: 0.5s ease;
-  opacity: 0.64;
+  opacity: 1;
   z-index: -999;
   border-radius: 50%;
 }
 .partners:hover {
+  box-shadow: 0 0 50px 4px var(--accent-color-light);
   transform: translateY(-5px) scale(1.04);
-  transition: all 0.1s ease-out;
+  transition: all 0.4s ease-out;
 
   color: var(--primary-text-color);
 }

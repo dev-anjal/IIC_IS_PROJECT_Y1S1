@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Bag</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e3f2c1;
+        padding: 20px;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 600px;
+        margin: auto;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+      .item img {
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      .info {
+        flex: 1;
+        margin-left: 10px;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+      }
+      .quantity {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+      .quantity button {
+        padding: 5px 10px;
+        border: none;
+        background: #ddd;
+        cursor: pointer;
+      }
+      .remove {
+        font-size: 29px;
+        /* adding glowing radial gradient */
+
+        cursor: pointer;
+        border-radius: 50%;
+
+        margin: 0 5px;
+      }
+      .favorite.liked {
+        color: red;
+      }
+      .buy button {
+        margin-left: 10px;
+        padding: 5px 10px;
+        border: none;
+        background: #f39c12;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="height: fit-content">
+      <h2>Shopping Bag</h2>
+    </div>
+    <script>
+      // get local storage datas
+
+      if (localStorage.getItem("id") === null) {
+      } else {
+        var i = 1;
+        var id = localStorage.getItem("id");
+        while (i <= id) {
+          if (localStorage.getItem("product" + i) === null) {
+            i++;
+          } else {
+            var product = localStorage.getItem("product" + i);
+            product = JSON.parse(product);
+            console.log(product);
+            document.body.innerHTML += `
+      <div class="container">
+
+            <div class="item">
+              <span class="remove" onclick="remove(this)" id="${i}">☠️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <img src="${product.image}" alt="404 image harayo" />
+              <div class="info">
+                <strong>${product.title}</strong><br />
+                Bball High<br />
+                White
+              </div>
+              <div class="actions">
+                <div class="quantity">
+                  <button class="decrease">-</button>
+                  <span>1</span>
+                  <button class="increase">+</button>
+                </div>
+                <strong>${product.price}</strong>
+              </div>
+              <div class="buy">
+                <button>Buy Now</button>
+            </div>
+          </div>
+              `;
+            console.log(i + "ok");
+
+            i = i + 1;
+          }
+        }
+      }
+      function remove(e) {
+        console.log(e.parentElement);
+        e.parentElement.parentElement.remove();
+        var id = e.id;
+        localStorage.removeItem("product" + id);
+      }
+
+      document.querySelectorAll(".increase").forEach((button) => {
+        button.addEventListener("click", () => {
+          let span = button.previousElementSibling;
+          span.textContent = parseInt(span.textContent) + 1;
+        });
+      });
+
+      document.querySelectorAll(".decrease").forEach((button) => {
+        button.addEventListener("click", () => {
+          let span = button.nextElementSibling;
+          let value = parseInt(span.textContent);
+          if (value > 1) span.textContent = value - 1;
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,3 +1,9 @@
+/* global document */
+/*
+ * @param {function} loadingAnimation - creating a loading animation when website is loading
+
+*/
+
 // creating a loading animation when website is loading
 function loadingAnimation() {
   setTimeout(() => {
@@ -26,3 +32,28 @@ function loadingAnimation() {
       .style.setProperty("transform", "translateY(0px)");
   }, 1000);
 }
+
+// intersection observer for the navbar
+const navBarr = document.querySelector(".navigationBar");
+const SectionChange = document.querySelectorAll(".changeNavColor");
+const footer = document.querySelector(".footerWrapper");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navBarr.style.backgroundColor = "#00674f";
+      }
+    });
+    console.log(entries);
+  },
+  {
+    threshold: 1,
+    rootMargin: "500px",
+  }
+);
+
+// observer.observe(partnersSection);
+SectionChange.forEach((item) => {
+  observer.observe(item);
+});

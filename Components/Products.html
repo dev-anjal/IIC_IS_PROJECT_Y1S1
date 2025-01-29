@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/navBar.css" />
+    <script type="text/javascript" src="./JS/main.js" defer></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Erica+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tsukimi+Rounded&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+
+        font-family: "Poppins", serif;
+      }
+      h3{
+        font-family: cursive;
+        font-size: x-large;
+        color: #00674f;
+      }
+      body {
+        margin-top: 100px;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: #ffffff;
+      }
+      .productWrapper {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 200px;
+      }
+      .productContainer {
+        width: 300px;
+        height: fit-content;
+        background-color: #fff;
+        /* border-radius: 10px; */
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+
+        /* align-items: center; */
+        /* justify-content: center; */
+        position: relative;
+        overflow: hidden;
+        gap: -10px;
+        padding-bottom: 10px;
+      }
+      .productImage {
+        width: 100%;
+        height: 270px;
+        margin-bottom: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+      .productImage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      button {
+        border: none;
+        background-color: transparent;
+      }
+      .label {
+        position: absolute;
+        z-index: 2;
+        top: 10px;
+        left: 0px;
+        background-color: #ff0000;
+        color: #fff;
+        padding: 5px 5px;
+        border-radius: 0px 5px 5px 0px;
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      .prices {
+        margin-bottom: 10px;
+        gap: 20px;
+        font-weight: 400;
+      }
+      .prices span {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .prices .prevPrice {
+        text-decoration: line-through;
+        color: #5c5858;
+        font-size: 0.8rem;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 0 10px;
+        gap: -30px;
+        position: absolute;
+        bottom: -80px;
+        z-index: 2;
+        opacity: 0.3;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.475);
+      }
+      .buttons button {
+        background-color: #dce4e4;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.1s ease;
+      }
+      .buttons button img {
+        width: 20px;
+        height: 20px;
+        color: #5c5858;
+      }
+      .buttons .heart {
+        color: #fff;
+        padding: 6px 8px;
+        border-radius: 5px;
+      }
+      .productContainer:hover .buttons {
+        position: absolute;
+        bottom: 5px;
+        opacity: 1;
+      }
+      .buttons button:hover {
+        background-color: #ebe4e4;
+        transform: scale(1.19);
+        box-shadow: 0 0 21px 1px rgba(199, 236, 227, 0.658);
+        filter: saturate(1.5);
+        opacity: 1;
+      }
+      .rating {
+        display: flex;
+        justify-content: end;
+        font-size: 1rem;
+        margin-top: -10px;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body onload="loadingAnimation()">
+    <nav class="navigationBar" style="z-index: 999">
+      <div class="nameLogo">
+        <div class="logo">
+          <!-- PLACEHOLDER FOR LOGO IF ANY-->
+        </div>
+        <div class="name">
+          <span class="name"
+            ><span
+              style="
+                color: gold;
+                font-family: 'Black Ops One', 'serif';
+                font-weight: lighter;
+                font-size: larger;
+              "
+              >W</span
+            >atchify</span
+          >
+        </div>
+      </div>
+      <!--!Replacing Brands With Research-->
+      <div class="navigationButtons">
+        <ul>
+          <li><a href="./index.html" class="navBtn">Home</a></li>
+          <li>
+            <a href="#Products" class="navBtn activeNavigationButton"
+              >Products</a
+            >
+          </li>
+          <li><a href="#" class="navBtn">Research</a></li>
+          <li><a href="#" class="navBtn">About</a></li>
+          <li><a href="#" class="navBtn">Blog</a></li>
+          <li
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <a href="#" class="navBtn">
+              <svg
+                class="cartIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                height="22px"
+                viewBox="0 -960 960 960"
+                width="22px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <style>
+     *{
+      margin: 0;
+      padding: 0;
+     }
+  .container
+  {
+    width: 100%;
+    height: 100vh ;
+  }
+  .banner{
+    width: 100%;
+    height: 65vh;
+    background-image: url(\omega.jpg);
+    background-size: cover;
+    background-size: cover;
+    background-position: 69%;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 100px;
+  }
+  .banner-text{
+    padding-top: 100px;
+    margin-left: 50px;
+  }
+  .banner-text h2{
+    letter-spacing:10px;
+  font-size: xx-large;
+    font-size: 25px;
+    color: #00674f;
+  }
+  .banner-text h1{
+    margin-left:5px;
+    font-size: 25px;
+  color: gold;
+  }
+  #btn{
+    width:130px;
+    height: 35px;
+    font-weight: bold;
+    background-color:#00674f;
+    letter-spacing: 3px;
+    margin-left: 50px;
+    color: gold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner">
+        <div class="banner-text">
+          <h2>NEW LIMITED EDITION</h2>
+          <h1>UP TO 40% OFF</h1>
+          <button id="btn">Buy Now</button>
+  
+        </div>
+      </div>
+    </div>
+    <!--TODO prakriti read the important ones-->
+    <h3 align="center">Top Sellings</h3>
+    <br />
+    <div class="productWrapper">
+      <!--Product 1-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/titan2.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/titan2.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Titan Watch 2024 Edition.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु5500.00</del></span>
+          <span class="newPrice">रु4999.99</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 2-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolex.jpg" target="_blank">
+                <img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolex.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Rolex Daytona -New Model 2025</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु3500.00</del></span>
+          <span class="newPrice">रु31,500.00</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 3-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolex5.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolex5.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Rolex Datejust 36 Watch .</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु15000</del></span>
+          <span class="newPrice">र 13500.00</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 4-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolex-Silver-Index-Oyster_main.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolex-Silver-Index-Oyster_main.jpg" alt="Product Image" />
+        </div>
+        <div class="title"> Rolex Datejust 36mm fluted bezel .</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु15000</del></span>
+          <span class="newPrice">रु13500.00</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 5-->
+      <div class="productContainer">
+        <div class="label">15% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/anarc1.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/anarc1.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Anarc Watch 2024 Edition.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु6000</del></span>
+          <span class="newPrice">रु5400.00</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 6-->
+      <div class="productContainer">
+        <div class="label">20% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolexladydatejust.webp" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolexladydatejust.webp" alt="Product Image" />
+        </div>
+        <div class="title">Rolex LadyDa.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु25000</del></span>
+          <span class="newPrice">रु20000</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 7-->
+      <div class="productContainer">
+        <div class="label">30% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolex1.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolex1.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Rolex Datejust Ice out .</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु35000</del></span>
+          <span class="newPrice">रु24500</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 8-->
+      <div class="productContainer">
+        <div class="label">25% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/omega.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/omega.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Omega De villa Co-Axial Chronometer watch</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु9000</del></span>
+          <span class="newPrice">रु6750</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+    </div>
+    <!--Second section / feasturing-->
+    <h2 align="center">New Arrivals</h2>
+    <br />
+    <div class="productWrapper">
+      <!--Product 1-->
+      <div class="productContainer">
+        <div class="label">5% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="casio ltp.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="casio ltp.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Casio Gold statinless steel Watch.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु34000</del></span>
+          <span class="newPrice">रु32300</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 2-->
+      <div class="productContainer">
+        <div class="label">15% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="\titan legan silver.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="\titan legan silver.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Titan Lagan Silver Dial Woman Watch with metal strap  .</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु50000</del></span>
+          <span class="newPrice">रु30000</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 3-->
+      <div class="productContainer">
+        <div class="label">25% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="\omega de ville.avif" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="\omega de ville.avif" alt="Product Image" />
+        </div>
+        <div class="title">Omega De Villa Prestige Quartz 27.5mm ladies Watch white.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु15000</del></span>
+          <span class="newPrice">रु11250</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 4-->
+      <div class="productContainer">
+        <div class="label">18% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="\casio mens dive style.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="\casio mens dive style.jpg"" alt="Product Image" />
+        </div>
+        <div class="title">Casio discount duro chronograph.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु6000</del></span>
+          <span class="newPrice">रु4920</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 5-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="\titan white dial.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="\titan white dial.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Titan White Dial Quartz Watch.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु19000</del></span>
+          <span class="newPrice">रु17100</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 6-->
+      <div class="productContainer">
+        <div class="label">15% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="\omegaseamster.webp" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="\omegaseamster.webp" alt="Product Image" />
+        </div>
+        <div class="title">Casio Watch 2024 Edition.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु25000</del></span>
+          <span class="newPrice">रु21250</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 7-->
+      <div class="productContainer">
+       <!-- <div class="label">10% OFF</div>-->
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href=".\Assets\Images\titanbrown1.webp" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src=".\Assets\Images\titanbrown1.webp" alt="Product Image" />
+        </div>
+        <div class="title">Titan On Trend White Dial Analog With Day and Date Strap.</div>
+        <div class="prices">
+          <!--<span class="prevPrice"><del>रु1200</del></span>-->
+          <span class="newPrice">रु9099</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 8-->
+      <div class="productContainer">
+        <!--<div class="label">10% OFF</div>-->
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href=".\Assets\Images\omega2.avif" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src=".\Assets\Images\omega2.avif" alt="Product Image" />
+        </div>
+        <div class="title">Omega Seamster Aqua Terra 150M .</div>
+        <div class="prices">
+          <!--<span class="prevPrice"><del>रु1200</del></span>-->
+          <span class="newPrice">रु2500</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+    </div>
+        <script type="text/javascript" defer>
+      const cartBtn = document.querySelectorAll(".addToCart");
+      const suscessMessage = document.querySelector(".suscessMessage");
+
+      cartBtn.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          console.log(e);
+          // getting data from that element
+          const id = e.target.getAttribute("data-id");
+          console.log(id);
+          suscessMessage.style.transform = "translate(0, 150%)";
+          setTimeout(() => {
+            suscessMessage.style.transform = "translate(-100%, 150%)";
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+
+</html>

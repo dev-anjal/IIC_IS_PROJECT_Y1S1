@@ -9,132 +9,74 @@
       content="Watchify is a one-stop shop for all your watch needs. We have a wide range of watches from different brands."
       keywords="watch, watches, watchify, watchify watches, watchify brands, watchify products"
     />
-    <title>Watchify</title>
+    <title>MAIN WORK</title>
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="stylesheet" href="./CSS/product.css" />
     <link rel="stylesheet" href="./CSS/navBar.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
     <!-- add icon -->
     <link rel="shortcut icon" href="Assets/Icons/logo.ico" type="image/ico" />
-       <!-- ALL EXTERNAL JS-->
-       <script type="text/javascript" src="./JS/main.js" defer></script>
+    <!-- ALL EXTERNAL JS-->
+    <script type="text/javascript" src="./JS/main.js" defer></script>
 
-    <!-- Footer Design with Internal CSS -->
-    <style>
-      .footer {
-        width: 100%;
-        height: 70px;
-        background-color:#00674f;
-        margin-top: auto;
-      }
-      .footerBar {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-      }
-      .footerContent {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: space-between;
-        align-items: center;
-        overflow: hidden;
-      }
-      .footerLogo {
-        display: flex;
-        width: 20%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        font-size: x-large;
-      }
-      .footerLogo::after{
-        content: '™';
-      }
-      .footerNavigation {
-        display: flex;
-        width: 20%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-      }
-      .footerContact {
+    <!-- categories design with internal css -->
+     <style>
+        .categoriesContainer {
         display: flex;
         flex-direction: column;
-        width: 20%;
-        height: 100%;
         justify-content: center;
         align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        color:black;
       }
-      .contact {
-        color: white;
-        font-size: 1.6rem;
-        font-family: "DM Serif Text", "serif";
-        font-weight: 400;
-        
-      }
-      .address {
-        color: white;
-        font-size: 0.9rem;
-        font-family: "DM Serif Text", "serif";
-        font-weight: 400;
-        
 
-      }
-      .phone {
-        color: white;
-        font-size: 0.9rem;
-        font-family: "DM Serif Text", "serif";
-        font-weight: 400;
+      .innercatWrapper {
         
-
-      }
-      .footerNavigation ul {
         display: flex;
-        list-style: none;
         justify-content: space-around;
-        width: 100%;
+        align-items: center;
+        width: 89%;
+        height: 80%;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
       }
-      .footerNavigation ul li  {
-        color: white;
-        text-decoration: none;
-        
-        display: flex;
-       
-      }
-      
-      .footerNavigation img {
 
-        width: 20px;
-        height: 20px;
-      }
-      .footerNavigation0 ul {
+      .categories {
+        scale:1.1;
         display: flex;
-        gap: 17px;
-        width: 20%;
-        height: 100%;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 230px;
+        height: 220px;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        transition: all 0.3s;
       }
-      .footerNavigation0 ul li {
-        
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "Black Ops One", "serif";
-        font-size: 1.2rem;
-      }
-      .footerNavigation0 ul li a {
-        color: white;
-        text-decoration: underline;
+      .categories img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 10px;
       }
 
-    </style>
+      .categories:hover {
+        transform: scale(1.1);
+      }
 
- 
-  
+      .categories h3 {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: black;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+     </style>
+   
   </head>
   <body onload="loadingAnimation()" background-color="black" class="grayscale">
     <div
@@ -166,7 +108,7 @@
       <div class="navigationButtons">
         <ul>
           <li><a href="#" class="navBtn">Home</a></li>
-          <li><a href="./AllProductHome.html" class="navBtn">Products</a></li>
+          <li><a href="./products.html" class="navBtn">Products</a></li>
           <li><a href="#" class="navBtn">Research</a></li>
           <li><a href="#" class="navBtn">About</a></li>
           <li><a href="#" class="navBtn">Blog</a></li>
@@ -261,14 +203,8 @@
             >
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop
-                    offset="0%"
-                    style="stop-color:#00674fd0"
-                  ></stop>
-                  <stop
-                    offset="100%"
-                    style="stop-color: #ffe6007e"
-                  ></stop>
+                  <stop offset="0%" style="stop-color: #00674fd0"></stop>
+                  <stop offset="100%" style="stop-color: #ffe6007e"></stop>
                 </linearGradient>
               </defs>
               <path
@@ -320,22 +256,23 @@
     </main>
 
     <div id="Products" class="sectionnn">
-      <!-- <img
+      <img
         class="backgroundForProducts"
-        src="./Assets/Images/bggg.jpg"
+        src="./Assets/lowerbg.jpg"
         alt=""
         style="
-          margin-top: -10px;
+          margin-top: -29px;
           position: absolute;
-          top: 0;
+          top: 30px;
           right: 0;
-          min-width: 120vw;
-          min-height: 110vh;
+          width: 100vw;
+          height: 110vh;
         "
-      /> -->
+      />
+      <div class="bglower"></div>
       <div class="productWrapper">
         <!-- ADDING SOME GAPS-->
-        <br /><br /><br /><br />
+        <br /><br /><br />
         <!-- First Product name= Anarc watch 2024 -->
         <div class="ProductsContent" style="scroll-snap-type: start">
           <!-- Products Section here -->
@@ -471,9 +408,37 @@
         </div>
       </div>
     </div>
+        <!---->
+    <!-- Categories Section here -->
+    <!---->
+    <div class="categoriesContainer changeNavColor">
+      <div class="innercatWrapper" style="position: relative">
+        <div style="position: absolute; top: 70px">
+          <h1 style="font-family: 'Courier New', Courier, monospace">
+            Categories<span style="color: gold">.</span>
+          </h1>
+        </div>
+        <div class="categories cat1">
+          <img src="./Assets/Images/r3.webp" alt=""  sstyle="object-fit: cover;"/>
+          <h3>Modern</h3>
+        </div>
+        <div class="categories cat2">
+          <img src="Assets/Images/r5.webp" alt=""  style="object-fit: cover; " />
+          <h3>Vintage</h3>
+        </div>
+        <div class="categories cat3">
+          <img src="./Assets/Images/titann.webp" alt="" style="object-fit: cover;" />
+          <h3>Minimal</h3>
+        </div>
+        <div class="categories cat4">
+          <img src="./Assets/Images/anarc2.jpg" style="object-fit: cover;" />
+          <h3>Fit Band</h3>
+        </div>
+      </div>
+    </div>
 
     <!-- Brands Section Here -->
-    <div id="Brands" class="sectionnn">
+    <div id="Brands" class="sectionnn changeNavColor">
       <div class="ourPartnersTitle">
         Our Partners<span
           style="
@@ -495,82 +460,133 @@
       </div>
     </div>
 
+
+
     <!-- Footer Section Here -->
-    <footer class="footer">
-      <div class="footerBar">
-        <div class="footerContent">
-          <div class="footerLogo">
-            <div class="name">
-              <span class="name"
-                ><span
-                  style="
-                    color: gold;
-                    font-family: 'Black Ops One', 'serif';
-                    font-weight: lighter;
-                    font-size: larger;
-                  "
-                  >W</span
-                >atchify</span
+    <footer>
+      <div class="footerItems changeNavColor">
+        <div class="footerWrapper">
+        <div class="brandName_Slogan">
+          <div class="brandName">Watchify<span>.</span></div>
+          <div class="slogan">Simple Yet Stylish.</div>
+        </div>
+        <div class="getInTouch">
+          <h3>Get in touch</h3>
+          <div class="getInTouch_Items">
+            <div class="phone">
+              <svg
+                height="13px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"\
+                fill="#fff"
               >
+                <path
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+                /></svg
+              >+977 98104106
+            </div>
+            <div class="email">
+              <svg
+                height="13px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="#fff"
+              >
+                <path
+                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                />
+              </svg>
+              support@watchify.com
             </div>
           </div>
-          <div class="footerNavigation0" >
-            <ul>
-              <li>
-                <a href="#" class="navBtn">Home</a>
-              </li>
-              <li>
-                <a href="#Products" class="navBtn">Products</a>
-              </li>
-              <li>
-                <a href="#" class="navBtn">About</a>
-              </li>
-            </ul>
-
-
           </div>
-          <div class="footerNavigation">
-            <ul>
-              <!-- social media links placeholder but no link attached -->
-              <li><a href="#"><img src="./Assets/Icons/facebookIcon.png"></img></a></li>
-              <li><a href="#"><img src="./Assets/Icons/twitterIcon.png"></img></a></li>
+          <div class="feedback">
+            <div class="title">
+              <h3>Feedback</h3>
+              </div>
+              <form onsubmit="checkForm(event)">
+              <div class="miniForm">
+                
+                <input type="text" placeholder="Name"  />
+                <input type="email" placeholder="Email" />
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Message"
+                ></textarea>
+                <button type="submit">Send</button>
+              </form>
+              </div>
+            </div>
 
-              <li><a href="#"><img src="./Assets/Icons/instagramIcon.png"></img></a></li>
-              <li><a href="#"><img src="./Assets/Icons/linkedinIcon.png"></img></a></li>
-            </ul>
-          </div>
-          <div class="footerContact" style="margin: 0;">
-            <div class="contact">Contact&nbsp;&nbsp;  Us</div>
-            
-            <div class="phone"><span>support@watchify.com</span></div>
+            <div class="explore">
+                <h3>Explore</h3>
+                <div class="exploreItems">
+                    <a href="#"><div class="exploreItem">Home</div></a>
+                    <a href="#"><div class="exploreItem">About</div></a>
+                    <a href="#"><div class="exploreItem">Contact</div></a>
+                    <a href="#"><div class="exploreItem">Services</div></a>
+                </div>
+            </div>
           </div>
         </div>
+    </div>
       </div>
     </footer>
-
+    <script src="./JS/main.js"></script>
     <noscript>Please Enable JavaScript In Your Browser </noscript>
-    <script type="text/javascript" defer>
-      // checking for double click in a buttons
-      document.querySelector(".navBtn").addEventListener("dblclick", () => {
-        alert("Maybe A Future Feature");
-        // change my url to a new page
-        // window.location.href = "https://www.google.com";
-      });
-      const btn = document.querySelectorAll(".navBtn");
-      // adding activeNavigationButton class to the first button
-      btn[0].classList.add("activeNavigationButton");
-      // adding class activeNavigationButton to the clicked button and remove from the rest
-      btn.forEach((button) => {
-        button.addEventListener("click", function () {
-          btn.forEach((button) => {
-            button.classList.remove("activeNavigationButton");
-          });
-          this.classList.add("activeNavigationButton");
-        });
-      });
+    <script type="text/javascript">
+      // Function to check the form
 
-      // creating a loading animation when website is loading
-     
+      function checkForm(event) {
+        event.preventDefault();
+        // check if the form is valid
+        if (event.target[0].value === "" || event.target[1].value === "") {
+          alert("Please fill in all the fields");
+          
+          
+        }
+        else{
+          event.target[0].setCustomValidity("ok");
+        }
+
+        // check if the email is valid
+        if (!event.target[1].value.includes("@")) {
+          alert("Please enter a valid email");
+          return;
+        }
+
+        // check if the message is valid
+        if (event.target[2].value === "") {
+          alert("Please enter a message");
+          return;
+        }
+
+        // submit the form
+        submitForm(event);
+      }
+      // finalizing the form
+      function submitForm(event) {
+       
+
+          // reset all values
+          event.target[0].value = "";
+          event.target[1].value = "";
+          event.target[2].value = "ONLY ONE SUBMISSION ALLOWED";
+
+          event.target[2].disabled='true'
+
+          // DISABLE ALL input
+        event.submitter.disabled="true"
+        event.submitter.style.color="#ff8080"
+        event.submitter.innerHTML="DISABLED"
+        
+
+
+
+      }
     </script>
   </body>
 </html>

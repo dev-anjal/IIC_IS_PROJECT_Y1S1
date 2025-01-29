@@ -6,21 +6,9 @@
   --accent-text-color: gold;
   --primary-text-color: #ffffff;
   --background-color: rgba(0, 0, 0, 0.397);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --box-shadow-color: rgba(0, 0, 0, 0.5);
-  --hover-background-color: rgba(255, 217, 0, 0.452);
-  --hover-after-background-color: rgba(251, 255, 0, 1);
-  --intro-first-part-color: beige;
-  --intro-second-part-color: gold;
-  --home-branding-color: rgba(255, 255, 253, 0.582);
-  --our-partners-title-color: #ffffff;
-  --partners-background-color: rgba(0, 0, 0, 0.397);
-  --partners-border-color: rgba(255, 255, 255, 0.1);
-  --partners-box-shadow-color: rgba(0, 0, 0, 0.5);
-  --partners-hover-after-background-color: rgb(251, 255, 0, 1);
-  --partners-hover-color: var(--primary-text-hover-color);
-  --primary-text-hover-color: #000;
-  --primary-background-hover-color: rgba(255, 255, 255, 0.99);
+  --primary-text-hover-color: #0bd4a5;
+  --primary-background-hover-color: #ffffff;
+  --primary-background-color: #0e0d0d;
 }
 .navigationBar {
   display: flex;
@@ -40,8 +28,10 @@
   /* allow items to take more than one line if they dont fit in a single line */
   flex-wrap: wrap;
 
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(4px);
   transition: 0.8s ease;
+  background-color: rgba(255, 255, 255, 0.055);
+  box-shadow: 0 0 0.8px 0.1px white;
 }
 /* aligning Watchify logo */
 
@@ -55,7 +45,7 @@
 .navigationBar .nameLogo .name {
   color: var(--primary-text-color);
   font-size: 30px;
-  font-weight: 750;
+  font-weight: 690;
   font-family: "DM Serif Text", serif;
   letter-spacing: 1.1px;
   cursor: pointer;
@@ -119,7 +109,7 @@
   opacity: 0.8;
 }
 .navigationButtons ul li a:hover {
-  color: var(--primary-text-hover-color);
+  color: black;
   background-color: var(--primary-background-hover-color);
 }
 .navigationButtons ul li a:hover .cartIcon {
