@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watchify</title>
+    <link rel="shortcut icon" href="Assets/Icons/logo.ico" type="image/ico" />
+    <link rel="stylesheet" href="./CSS/navBar.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Julee&display=swap");
+      /* hide scroll bar */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+
+        font-family: "DM Serif Text", serif;
+      }
+      body {
+        background: url("Assets/Images/aboutPageBg.jpg");
+        background-size: 130% 130%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: 30% 80%;
+        /* overflow: hidden; */
+      }
+      .aboutDesc {
+        font-family: "Julee", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      h1 {
+        font-size: 41px;
+        font-weight: 550;
+      }
+      .allprofiles {
+        display: flex;
+        transform: translate(0vw, 0);
+        transition: all 1.4s;
+        width: 100%;
+      }
+      .profileContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 100vw;
+        height: 100%;
+        /* border: 5px solid black; */
+      }
+      .innerSection {
+        scale: 1.15;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        justify-content: center;
+        align-items: start;
+        width: 55vw;
+        height: 100%;
+
+        border-radius: 10px;
+        padding: 20px;
+      }
+      #name {
+        font-size: 30px;
+        font-weight: 800;
+        font-style: italic;
+        color: #00674f;
+        transform: translate(210px, 0);
+      }
+      .imageSide img {
+        display: flex;
+        justify-content: center;
+        object-fit: cover;
+        align-items: center;
+        border-radius: 50%;
+        /* transform: translateY(-46px); */
+        overflow: hidden;
+        /* border: 3px solid #ffffff; */
+        box-shadow: 0 0 78px 4px #007a48;
+      }
+      .guffandquote {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: start;
+      }
+      .guff {
+        font-size: 1.3rem;
+        font-weight: 400;
+        font-family: "Julee", serif;
+
+        color: #0f0f0f;
+        width: 100%;
+        text-align: justify;
+      }
+      .guffandquote {
+        position: relative;
+      }
+      .quote {
+        font-size: 1.4rem;
+        font-weight: 400;
+        font-family: "DM Serif Text", serif;
+        color: rgb(53, 36, 4);
+        width: 100%;
+
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+      }
+      .cursorLine {
+        animation: cursor 1s infinite;
+        font-weight: bolder;
+        transform: translateY(4px);
+      }
+      @keyframes cursor {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body onload="loadingAnimation()">
+    <nav
+      class="navigationBar"
+      style="
+        z-index: 999;
+        background-color: #00674f;
+
+        margin-bottom: 200px;
+      "
+    >
+      <div class="nameLogo">
+        <div class="logo">
+          <!-- PLACEHOLDER FOR LOGO IF ANY-->
+        </div>
+        <div class="name">
+          <span
+            class="name"
+            style="
+              font-size: 30px;
+              font-weight: 690;
+              font-family: 'DM Serif Text', serif;
+              letter-spacing: 1.1px;
+              cursor: pointer;
+            "
+            ><span
+              style="
+                color: gold;
+                font-family: 'Black Ops One', 'serif';
+                font-weight: lighter;
+                font-size: larger;
+              "
+              >W</span
+            >atchify</span
+          >
+        </div>
+      </div>
+      <!--!Replacing Brands With Research-->
+      <div class="navigationButtons">
+        <ul>
+          <li><a href="./index.html" class="navBtn">Home</a></li>
+          <li>
+            <a href="./products.html" class="navBtn">Products</a>
+          </li>
+          <li><a href="./index.html" class="navBtn">Research</a></li>
+          <li>
+            <a href="./about.html" class="navBtn activeNavigationButton"
+              >About</a
+            >
+          </li>
+          <li><a href="./blog.html" class="navBtn">Blog</a></li>
+          <li
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <a href="./cart.html" class="navBtn">
+              <svg
+                class="cartIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                height="22px"
+                viewBox="0 -960 960 960"
+                width="22px"
+                fill="white"
+              >
+                <path
+                  d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <div
+      class="beforeText"
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 400vh;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        class="part0"
+        id="part0"
+        style="
+          height: 100vh;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <h1
+          style="
+            font-size: 76px !important;
+            text-align: center;
+            font-weight: 100 !important;
+          "
+        >
+          Hello There, <br />
+        </h1>
+      </div>
+      <div
+        class="part1"
+        id="part1"
+        style="
+          height: 100vh;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <h1 style="font-size: 60px !important; text-align: center">
+          Before Even Knowing About Our Company, <br />
+          Let's First Meet Our Aspiring Team
+        </h1>
+      </div>
+      <div
+        class="part2"
+        id="part2"
+        style="
+          height: 100vh;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <h1 style="font-size: 60px !important; text-align: center">
+          We Are A Team Of Passionate Individuals ,<br />
+          Consisting of Just <b>5</b> Members
+        </h1>
+      </div>
+
+      <div
+        class="part3"
+        id="part3"
+        style="
+          height: 100vh;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <!-- ANJAL SHARMA PHUYAL -->
+        <div class="allprofiles" style="display: flex">
+          <span class="sideBySide" style="display: flex">
+            <div class="profileContainer">
+              <div class="innerSection">
+                <div id="name">&nbsp;&nbsp;Anjal Sharma Phuyal</div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    gap: 21px;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <div class="imageSide">
+                    <img
+                      src="./Assets/profilePics/anjal.jpeg"
+                      width="200px"
+                      height="200px"
+                      style="border-radius: 50%"
+                    />
+                  </div>
+                  <div class="guffandquote">
+                    <div class="guff">
+                      Hello there , its me Anjal Sharma Phuyal. AKA Franky. you
+                      may be wondering Who i am? What i do? what are my
+                      likes/dislikes? this will be a long story. but In Short I
+                      am a student. i love to explore the world and learn new
+                      things everyday. my hobbies are to read finincial books
+                      and playing guitar in my free time. I love to Go on long
+                      ride with friends and I have a Aim to be a suscessful
+                      Entrepreneur and Developer.
+                    </div>
+                    <div class="quote">
+                      <span style="color: red">"</span>Even A Dead Fish Can Go
+                      With The Flow<span class="cursorLine">| </span
+                      ><span style="color: red">"</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Prakriti Katwal -->
+            <div class="profileContainer">
+              <div class="innerSection">
+                <div id="name">&nbsp;&nbsp;Prakriti Katwal</div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    gap: 21px;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <div class="imageSide">
+                    <img
+                      src="./Assets/profilePics/prakriti.jpg"
+                      width="200px"
+                      height="200px"
+                      style="border-radius: 50%"
+                    />
+                  </div>
+                  <div class="guffandquote">
+                    <div class="guff">
+                      Hi I'm prakriti katwal I'm a first year BIT student at
+                      itahari international college, passionate about web
+                      development, good with colors and design. I'm a beginner
+                      in coding, with experience in HTML and CSS. I'm a creative
+                      person who loves to explore new things and learn new
+                      skills. I'm always looking for new opportunities to learn
+                      and grow.
+                    </div>
+                    <div class="quote">
+                      <span style="color: red">"</span>Ps life is a beautiful
+                      adventure<span class="cursorLine">| </span
+                      ><span style="color: red">"</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </span>
+
+          <!-- KUSHAL PAUDEL -->
+          <span class="sideBySide" style="display: flex">
+            <div class="profileContainer">
+              <div class="innerSection">
+                <div id="name">&nbsp;&nbsp;Kushal Paudel</div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    gap: 21px;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <div class="imageSide">
+                    <img
+                      src="./Assets/profilePics/kushal.jpg"
+                      width="200px"
+                      height="200px"
+                      style="border-radius: 50%"
+                    />
+                  </div>
+                  <div class="guffandquote">
+                    <div class="guff">
+                      I'm Kushal Paudel, a passionate frontend web developer and
+                      tech enthusiast. Currently honing my skills in HTML, CSS,
+                      JavaScript, MySQL, Python, and Java, I love creating
+                      engaging digital experiences. Beyond coding, I explore
+                      content creation, blending creativity with technology.
+                      Watchify is more than just a project—it's a step toward
+                      innovation, bringing seamless, user-friendly solutions to
+                      life. Stay tuned as we build something exciting!
+                    </div>
+                    <div class="quote">
+                      <span style="color: red">"</span>Even A Dead Fish Can Go
+                      With The Flow<span class="cursorLine">| </span
+                      ><span style="color: red">"</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- SUMIT POKHREL -->
+            <div class="profileContainer">
+              <div class="innerSection">
+                <div id="name">&nbsp;&nbsp;Sumit Pokhrel</div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    gap: 21px;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <div class="imageSide">
+                    <img
+                      src="./Assets/profilePics/sumit.jpg"
+                      width="200px"
+                      height="200px"
+                      style="border-radius: 50%"
+                      style="object-fit: contain"
+                    />
+                  </div>
+                  <div class="guffandquote">
+                    <div class="guff">
+                      I’m Sumit Pokharel, a 17-year-old student from Sundar
+                      Haraincha 8 Salakpur. I'm currently studying BSc Computing
+                      at Itahari International College. I'm new to coding, with
+                      experience in HTML and CSS. Along with tech, I'm
+                      passionate about sports, especially football and cricket.
+                      I'm always looking for new learning opportunities and
+                      challenges.
+                    </div>
+                    <div class="quote">
+                      <span style="color: red">"</span>Life's like code—keep
+                      debugging until it is smooth<span class="cursorLine"
+                        >| </span
+                      ><span style="color: red">"</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </span>
+          <!-- Nischal Karki -->
+          <div class="profileContainer">
+            <div class="innerSection">
+              <div id="name">&nbsp;&nbsp;Nischal Karki</div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  gap: 21px;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <div class="imageSide">
+                  <img
+                    src="./Assets/profilePics/nischal.jpg"
+                    width="200px"
+                    height="200px"
+                    style="border-radius: 50%"
+                    style="object-fit: contain"
+                  />
+                </div>
+                <div class="guffandquote">
+                  <div class="guff">
+                    I’m Sumit Pokharel, a 17-year-old student from Sundar
+                    Haraincha 8 Salakpur. I'm currently studying BSc Computing
+                    at Itahari International College. I'm new to coding, with
+                    experience in HTML and CSS. Along with tech, I'm passionate
+                    about sports, especially football and cricket. I'm always
+                    looking for new learning opportunities and challenges.
+                  </div>
+                  <div class="quote">
+                    <span style="color: red">"</span>Life's like code—keep
+                    debugging until it is smooth<span class="cursorLine"
+                      >| </span
+                    ><span style="color: red">"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+    <div
+      id="aboutus"
+      class="intro"
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1 align="center">About Us</h1>
+      <p
+        class="aboutDesc"
+        style="width: 60%; text-align: center; font-size: x-large"
+      >
+        Welcome to Watchify. A go-to destination for the stylish and
+        high-quality watches. At Watchify, we believe that the Watch is not just
+        a things to remind us about the time, but it is the recognization of our
+        presonality and style.Watchify is a web which sells premium
+        quality-luxury watches-smartwatches in a suitable and favorable segment.
+        It allows users/customers to overcome geographical barriers and allow
+        them to purchase watches anytime and from anywhere. The primary
+        objectives of our company is to satisfy our customers. We offers watches
+        manufactured by different popular watch brands. We offers you all a
+        affordable watches to every background ensuring the best quality with
+        the selective design of the user's desire. We serves as a medium between
+        the Munufacturer and the customers. Our work is to make easier and
+        fastest hub for watch industry.
+      </p>
+    </div>
+
+    <script>
+      window.location.href = "#part0";
+      function loadingAnimation() {
+        var part0 = document.getElementById("part0");
+        var part1 = document.getElementById("part1");
+        var part2 = document.getElementById("part2");
+        var part3 = document.getElementById("part3");
+        var intro = document.querySelector(".intro");
+        var beforeText = document.querySelector(".beforeText");
+        setTimeout(() => {
+          window.location.href = "#part0";
+        }, 2000);
+
+        setTimeout(() => {
+          window.location.href = "#part1";
+        }, 4000);
+
+        setTimeout(() => {
+          window.location.href = "#part2";
+        }, 8500);
+
+        setTimeout(() => {
+          window.location.href = "#part3";
+        }, 12000);
+
+        setTimeout(() => {
+          var allprofiles = document.querySelector(".allprofiles");
+          allprofiles.style.transform = "translate(0px, 0)";
+          startScrollingProfiles();
+        }, 16000);
+      }
+
+      function startScrollingProfiles() {
+        var allprofiles = document.querySelector(".allprofiles");
+        allprofiles.style.transform = "translate(0, 0)";
+        setTimeout(() => {
+          allprofiles.style.transform = "translate(-100vw, 0)";
+        }, 1000);
+        setTimeout(() => {
+          allprofiles.style.transform = "translate(-200vw, 0)";
+        }, 5000);
+
+        setTimeout(() => {
+          allprofiles.style.transform = "translate(-300vw, 0)";
+        }, 8500);
+
+        setTimeout(() => {
+          allprofiles.style.transform = "translate(-400vw, 0)";
+        }, 13000);
+        setTimeout(() => {
+          allprofiles.style.scale = "0.5";
+          allprofiles.style.flexWrap = "wrap";
+          allprofiles.style.transform = "translate(-45vw, 0)";
+          document.querySelectorAll(".sideBySide").forEach((container) => {
+            container.style.width = "100%";
+            container.style.display = "flex";
+            container.style.flexDirection = "row";
+            container.style.marginBottom = "40px";
+          });
+        }, 16000);
+        setTimeout(() => {
+          finalAllShow();
+        }, 18000);
+      }
+      function finalAllShow() {
+        window.location.href = "#aboutus";
+        var navBar = document.querySelector("nav");
+        navBar.style.transform = "translateX(0%)";
+      }
+      finalAllShow();
+    </script>
+  </body>
+</html>

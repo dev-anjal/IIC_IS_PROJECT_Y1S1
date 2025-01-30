@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Bag</title>
+    <link rel="stylesheet" href="./CSS/navBar.css" />
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -13,8 +14,8 @@
       .container {
         background: white;
         padding: 20px;
-        border-radius: 10px;
-        width: 600px;
+        border-radius: 0px;
+        width: 700px;
         margin: auto;
       }
       .item {
@@ -28,8 +29,9 @@
         width: 80px;
         height: 80px;
         border-radius: 5px;
-        object-fit: cover;
+        object-fit: contain;
       }
+
       .info {
         flex: 1;
         margin-left: 10px;
@@ -51,6 +53,7 @@
       }
       .remove {
         font-size: 29px;
+        transition: all 0.3s ease;
         /* adding glowing radial gradient */
 
         cursor: pointer;
@@ -58,9 +61,7 @@
 
         margin: 0 5px;
       }
-      .favorite.liked {
-        color: red;
-      }
+
       .buy button {
         margin-left: 10px;
         padding: 5px 10px;
@@ -73,13 +74,80 @@
     </style>
   </head>
   <body>
-    <div class="container" style="height: fit-content">
+    <nav
+      class="navigationBar"
+      style="
+        z-index: 999;
+        background-color: #00674f;
+        transform: translateY(0%);
+        margin-bottom: 200px;
+      "
+    >
+      <div class="nameLogo">
+        <div class="logo">
+          <!-- PLACEHOLDER FOR LOGO IF ANY-->
+        </div>
+        <div class="name">
+          <span class="name"
+            ><span
+              style="
+                color: gold;
+                font-family: 'Black Ops One', 'serif';
+                font-weight: lighter;
+                font-size: larger;
+              "
+              >W</span
+            >atchify</span
+          >
+        </div>
+      </div>
+      <!--!Replacing Brands With Research-->
+      <div class="navigationButtons">
+        <ul>
+          <li><a href="./index.html" class="navBtn">Home</a></li>
+          <li>
+            <a href="./products.html" class="navBtn">Products</a>
+          </li>
+          <li><a href="./index.html" class="navBtn">Research</a></li>
+          <li><a href="./about.html" class="navBtn">About</a></li>
+          <li><a href="./blog.html" class="navBtn">Blog</a></li>
+          <li
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <a href="./cart.html" class="navBtn activeNavigationButton">
+              <svg
+                class="cartIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                height="22px"
+                viewBox="0 -960 960 960"
+                width="22px"
+                fill="black"
+              >
+                <path
+                  d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container" style="height: fit-content; margin-top: 100px">
       <h2>Shopping Bag</h2>
     </div>
     <script>
       // get local storage datas
+      console.log(localStorage.getItem("id"));
 
       if (localStorage.getItem("id") === null) {
+        console.log("nothing in cart");
+        document.body.innerHTML += `
+         <div class="container">
+
+            <h3>Nothing in cart</h3>
+            <a href="./products.html">Go to products</a>
+            </div>
+        `;
       } else {
         var i = 1;
         var id = localStorage.getItem("id");
@@ -94,7 +162,9 @@
       <div class="container">
 
             <div class="item">
-              <span class="remove" onclick="remove(this)" id="${i}">☠️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="remove" onclick="remove(this)" id="${i}">
+                <img src="./Assets/Icons/deleteIcon.png" alt="delete" style="width:24px; height:24px;" />
+                </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="${product.image}" alt="404 image harayo" />
               <div class="info">
                 <strong>${product.title}</strong><br />

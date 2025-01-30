@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Watchify</title>
+    <link rel="shortcut icon" href="Assets/Icons/logo.ico" type="image/ico" />
     <link rel="stylesheet" href="./CSS/navBar.css" />
     
     <script type="text/javascript" src="./JS/main.js" defer></script>
@@ -333,13 +334,13 @@
         <ul>
           <li><a href="./index.html" class="navBtn">Home</a></li>
           <li>
-            <a href="#Products" class="navBtn activeNavigationButton"
+            <a href="#" class="navBtn activeNavigationButton"
               >Products</a
             >
           </li>
-          <li><a href="#" class="navBtn">Research</a></li>
-          <li><a href="#" class="navBtn">About</a></li>
-          <li><a href="#" class="navBtn">Blog</a></li>
+          <li><a href="./research.html" class="navBtn">Research</a></li>
+          <li><a href="./about.html" class="navBtn">About</a></li>
+          <li><a href="./blog.html" class="navBtn">Blog</a></li>
           <li
             style="display: flex; align-items: center; justify-content: center"
           >
@@ -488,7 +489,7 @@
           </div>
           <!-- Product Image-->
 
-          <img src="./Assets/Images/rolex-Silver-Index-Oyster_main.jpg" alt="Product Image" />
+          <img src="./Assets/Images/rolex-Silver-Index-Oyster_main.jpg" alt="Product Image" style="object-fit: contain;"/>
         </div>
         <div class="title"> Rolex Datejust 36mm fluted bezel .</div>
         <div class="prices">
@@ -515,7 +516,7 @@
           </div>
           <!-- Product Image-->
 
-          <img src="./Assets/Images/anarc1.jpg" alt="Product Image" style="object-fit: cover; width: fit-content;" />
+          <img src="./Assets/Images/AnarcTransparent.png" alt="Product Image" style="object-fit: contain; width: auto; " />
         </div>
         <div class="title">Anarc Watch 2024 Edition.</div>
         <div class="prices">
@@ -833,28 +834,107 @@
 <div class="container2">
 <div class="pictures">
   <img src="Assets\Images\titaan.jpg" alt="Image 1">
-  <div class="text-overlay"> <a href="./pages/rolex.html" >Rolex </a></div>
+  <div class="text-overlay"> <a href="rolex.html" >Rolex </a></div>
 </div>
 <div class="pictures">
   <img src="Assets\Images\t2.jpg" alt="Image 2">
-  <div class="text-overlay"><a href="./pages/titan.html" >Titan</a></div>
+  <div class="text-overlay"><a href="titan.html" >Titan</a></div>
 </div>
 <div class="pictures">
-  <img src="Assets\Images\c6.jpg " alt="Image 3">
-  <div class="text-overlay"><a href="./pages/omega.html">omega</a></div>
+  <img src="Assets\Images\c6.jpg " alt="Image 3" style="object-fit: cover;">
+  <div class="text-overlay"><a href="omega.html">omega</a></div>
 </div>
 <div class="pictures">
   <img src="Assets\Images\cartier.jpg" alt="Image 4">
-  <div class="text-overlay"><a href="./pages/casio.html">Casio</a></div>
+  <div class="text-overlay"><a href="casio.html">Casio</a></div>
 </div>
 </div>
 </div>
 
+
+    <!-- Footer Section Here -->
+     <link rel="stylesheet" href="./CSS/footer.css">
+    <footer>
+      <div class="footerItems changeNavColor">
+        <div class="footerWrapper">
+        <div class="brandName_Slogan">
+          <div class="brandName">Watchify<span>.</span></div>
+          <div class="slogan">Simple Yet Stylish.</div>
+        </div>
+        <div class="getInTouch">
+          <h3>Get in touch</h3>
+          <div class="getInTouch_Items">
+            <div class="phone">
+              <svg
+                height="13px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"\
+                fill="#fff"
+              >
+                <path
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+                /></svg
+              >+977 98104106
+            </div>
+            <div class="email">
+              <svg
+                height="13px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="#fff"
+              >
+                <path
+                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                />
+              </svg>
+              support@watchify.com
+            </div>
+          </div>
+          </div>
+          <div class="feedback">
+            <div class="title">
+              <h3>Feedback</h3>
+              </div>
+              <form onsubmit="checkForm(event)">
+              <div class="miniForm">
+                
+                <input type="text" placeholder="Name"  />
+                <input type="email" placeholder="Email" />
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Message"
+                ></textarea>
+                <button type="submit">Send</button>
+              </form>
+              </div>
+            </div>
+
+            <div class="explore">
+                <h3>Explore</h3>
+                <div class="exploreItems">
+                    <a href="./index.html"><div class="exploreItem">Home</div></a>
+                    <a href="./about.html"><div class="exploreItem">About</div></a>
+                    <a href="./blog.html"><div class="exploreItem">Blog</div></a>
+                    <a href="./products.html"><div class="exploreItem">Products</div></a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      </div>
+    </footer>
+
 <script type="text/javascript" defer>
+  console.log(localStorage.getItem("id"));
  if(localStorage.getItem("id") == null){
     localStorage.setItem("id", 1);
  }
- localStorage.setItem("id", 1);
+ 
+
+
 
     console.log(localStorage.getItem("id"));
   
