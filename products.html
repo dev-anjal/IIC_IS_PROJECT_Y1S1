@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watchify</title>
+    <link rel="shortcut icon" href="Assets/Icons/logo.ico" type="image/ico" />
+    <link rel="stylesheet" href="./CSS/navBar.css" />
+    
+    <script type="text/javascript" src="./JS/main.js" defer></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Erica+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tsukimi+Rounded&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+
+        font-family: "Poppins", serif;
+      }
+      h2{
+        font-family: cursive;
+        font-size: x-large;
+        color: #00674f;
+      }
+      h3{
+        font-family: cursive;
+        font-size: x-large;
+        color: #00674f;
+      }
+      body {
+        margin-top: 100px;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: #ffffff;
+        
+      }
+      .productWrapper {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: space-around;
+       flex-wrap: wrap;
+        margin-bottom: 60px;
+        
+      }
+      .productContainer {
+        width: 300px;
+        height: fit-content;
+        background-color: white;
+        /* border-radius: 10px; */
+        box-shadow: 0 0 10px 4px rgba(31, 4, 4, 0.1);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s;
+
+        /* align-items: center; */
+        /* justify-content: center; */
+        position: relative;
+       overflow: hidden;
+        gap: -10px;
+        padding-bottom: 10px;
+       
+      }
+      .productImage {
+        width: 100%;
+        height: 270px;
+      object-fit: cover;
+        margin-bottom: 10px;
+        position: relative;
+        overflow: hidden;
+       
+      }
+      .productImage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        
+      }
+      button {
+        border: none;
+        background-color: transparent;
+      }
+      .label {
+        position: absolute;
+        z-index: 2;
+        top: 10px;
+        left: 0px;
+        background-color: #ff0000;
+        color: #fff;
+        padding: 5px 5px;
+        border-radius: 0px 5px 5px 0px;
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      .prices {
+        margin-bottom: 10px;
+        gap: 20px;
+        font-weight: 400;
+        
+      }
+      .prices span {
+        font-size: 1.2rem;
+        font-weight: 600;
+        
+      
+      }
+      .prices .prevPrice {
+        text-decoration: line-through;
+        color: #5c5858;
+        font-size: 0.8rem;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 0 10px;
+        gap: -30px;
+        position: absolute;
+        bottom: -80px;
+        z-index: 2;
+        opacity: 0.3;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.475);
+      }
+      .buttons button {
+        background-color: #dce4e4;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.1s ease;
+      }
+      .buttons button img {
+        width: 20px;
+        height: 20px;
+        color: #5c5858;
+      }
+      .buttons .heart {
+        color: #fff;
+        padding: 6px 8px;
+        border-radius: 5px;
+      }
+      .productContainer:hover .buttons {
+        position: absolute;
+        bottom: 5px;
+        opacity: 1;
+      }
+      .buttons button:hover {
+        background-color: #ebe4e4;
+        transform: scale(1.19);
+        box-shadow: 0 0 13px 5px rgba(199, 236, 227, 0.658);
+        filter: saturate(1.5);
+        opacity: 1;
+      }
+      .rating {
+        display: flex;
+        justify-content: end;
+        font-size: 1rem;
+        margin-top: -10px;
+        margin-right: 8px;
+      }
+  
+  .banner{
+    width: 100%;
+    height: 65vh;
+    background-image: url('Assets/Images/omega.jpg');
+    background-size: cover;
+    background-size: cover;
+    background-position: 69%;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    filter: brightness(0.86) contrast(1.16);
+   
+  }
+  .banner-text{
+    filter: brightness(1) !important;
+
+    padding-top: 150px;
+    margin-left: 50px;
+  }
+  .banner-text h2{
+    letter-spacing:10px;
+  font-family: 'Black Ops One', 'serif';
+  font-weight: lighter;
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.212);
+  -webkit-text-stroke: 0.4px rgb(255, 255, 255);
+    font-size: 34px;
+    color: white;
+  }
+  .banner-text h1{
+    margin-left:5px;
+    font-size: 25px;
+  color: gold;
+  }
+  #btn{
+    width:120px;
+    height: 35px;
+    font-weight: bold;
+    background-color:#00674f;
+    letter-spacing: 3px;
+    margin-left: 50px;
+    color: gold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .suscessMessage {
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #309934;
+        color: #fff;
+        padding: 10px;
+        font-size: 1.2rem;
+        z-index: 999;
+        transform: translate(-100%, 150%);
+        transition: all 0.3s ease;
+        border-radius: 0px 7px 7px 0px;
+      }
+      .searchBtn{
+        position: absolute;
+        width: 15%;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        padding: 0 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #5c5858;
+        background-color: #f0f0f0;
+      }
+      .container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+ 
+
+
+}
+
+.pictures {
+  gap:20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 250px;
+  height: 65vh;
+}
+
+.pictures img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pictures:hover img {
+  transform: scale(1.1);  
+}
+.text-overlay  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.text-overlay a{
+  color: white;
+  text-decoration: none;
+}
+
+.pictures:hover .text-overlay{
+  opacity: 1; 
+}
+
+    </style>
+  </head>
+  <body onload="loadingAnimation()">
+    <nav class="navigationBar" style="z-index: 999; background-color: #00674f;">
+      <div class="nameLogo">
+        <div class="logo">
+          <!-- PLACEHOLDER FOR LOGO IF ANY-->
+        </div>
+        <div class="name">
+          <span class="name"
+            ><span
+              style="
+                color: gold;
+                font-family: 'Black Ops One', 'serif';
+                font-weight: lighter;
+                font-size: larger;
+              "
+              >W</span
+            >atchify</span
+          >
+        </div>
+      </div>
+      <!--!Replacing Brands With Research-->
+      <div class="navigationButtons">
+        <ul>
+          <li><a href="./index.html" class="navBtn">Home</a></li>
+          <li>
+            <a href="#" class="navBtn activeNavigationButton"
+              >Products</a
+            >
+          </li>
+          <li><a href="./research.html" class="navBtn">Research</a></li>
+          <li><a href="./about.html" class="navBtn">About</a></li>
+          <li><a href="./blog.html" class="navBtn">Blog</a></li>
+          <li
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <a href="./cart.html" class="navBtn">
+              <svg
+                class="cartIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                height="22px"
+                viewBox="0 -960 960 960"
+                width="22px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="suscessMessage">
+      <div class="message">Product Added To Cart Suscessfully!</div>
+      <div class="tick">✅</div>
+    </div>
+   
+  </head>
+  
+    <div class="container">
+      <div class="banner">
+        <div class="banner-text">
+          <h2>NEW LIMITED EDITION</h2>
+          <h1>UP TO 40% OFF</h1>
+          <button id="btn">Buy Now</button>
+  
+        </div>
+      </div>
+    </div>
+    <!--TODO prakriti read the important ones-->
+
+
+    <h3 align="center" style="margin-top: -20px;">Top Sellings</h3>
+    <form >
+    <input oninput="searchBar()"class='searchBtn' type="text" id="search" placeholder="Search for products" />
+  </form>
+
+    <br /> <br> <br>
+    <div class="productWrapper">
+      <!--Product 1-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+
+          <div class="buttons">
+            <button class="addToCart" >
+              <img src="./Assets/Icons/cart.png" alt=""  >
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/titan2.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+          <img src="./Assets/Images/titan2.jpg" alt="Product Image" />
+
+        </div>
+        <div class="title">Titan Watch 2024 Edition.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु5500.00</del></span>
+          <span class="newPrice">रु4999.99</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 2-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolex.jpg" target="_blank">
+                <img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolex.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Rolex Daytona -New Model 2025</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु3500.00</del></span>
+          <span class="newPrice">रु31,500.00</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 3-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolex5.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolex5.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Rolex Datejust 36 Watch .</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु15000</del></span>
+          <span class="newPrice">र 13500.00</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 4-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolex-Silver-Index-Oyster_main.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt="" style="object-fit: cover; width: fit-content;"
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolex-Silver-Index-Oyster_main.jpg" alt="Product Image" style="object-fit: contain;"/>
+        </div>
+        <div class="title"> Rolex Datejust 36mm fluted bezel .</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु15000</del></span>
+          <span class="newPrice">रु13500.00</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 5-->
+      <div class="productContainer">
+        <div class="label">15% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/anarc1.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/AnarcTransparent.png" alt="Product Image" style="object-fit: contain; width: auto; " />
+        </div>
+        <div class="title">Anarc Watch 2024 Edition.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु6000</del></span>
+          <span class="newPrice">रु5400.00</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 6-->
+      <div class="productContainer">
+        <div class="label">20% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolexladydatejust.webp" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolexladydatejust.webp" alt="Product Image" />
+        </div>
+        <div class="title">Rolex LadyDa.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु25000</del></span>
+          <span class="newPrice">रु20000</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 7-->
+      <div class="productContainer">
+        <div class="label">30% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/rolex1.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/rolex1.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Rolex Datejust Ice out .</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु35000</del></span>
+          <span class="newPrice">रु24500</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 8-->
+      <div class="productContainer">
+        <div class="label">25% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="./Assets/Images/omega.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="./Assets/Images/omega.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Omega Devilla Co-Axial watch.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु9000</del></span>
+          <span class="newPrice">रु6750</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+    </div>
+    <!--Second section / feasturing-->
+    <h2 align="center">New Arrivals</h2>
+    <br />
+    <div class="productWrapper">
+      <!--Product 1-->
+      <div class="productContainer">
+        <div class="label">5% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href=".\Assets\Images\casio ltp.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src=".\Assets\Images\casio ltp.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Casio Gold statinless steel Watch.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु34000</del></span>
+          <span class="newPrice">रु32300</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 2-->
+      <div class="productContainer">
+        <div class="label">15% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="Assets\Images\titan legan silver.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="Assets\Images\titan legan silver.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Titan Lagan Silver Dialwatch.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु50000</del></span>
+          <span class="newPrice">रु30000</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 3-->
+      <div class="productContainer">
+        <div class="label">25% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="Assets\Images\omega de ville.avif" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="Assets\Images\omega de ville.avif" alt="Product Image" />
+        </div>
+        <div class="title">Omega De Villa Prestige Watch.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु15000</del></span>
+          <span class="newPrice">रु11250</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 4-->
+      <div class="productContainer">
+        <div class="label">18% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="Assets\Images\titan on trend.webp" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="Assets\Images\titan on trend.webp" alt="Product Image" />
+        </div>
+        <div class="title">Casio discount duro chronograph.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु6000</del></span>
+          <span class="newPrice">रु4920</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 5-->
+      <div class="productContainer">
+        <div class="label">10% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="Assets\Images\titan white dial.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="Assets\Images\titan white dial.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Titan White Dial Quartz Watch.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु19000</del></span>
+          <span class="newPrice">रु17100</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 6-->
+      <div class="productContainer">
+        <div class="label">15% OFF</div>
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href="Assets\Images\pinwatch.jpg" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src="Assets\Images\pinwatch.jpg" alt="Product Image" />
+        </div>
+        <div class="title">Casio Watch 2024 Edition.</div>
+        <div class="prices">
+          <span class="prevPrice"><del>रु25000</del></span>
+          <span class="newPrice">रु21250</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <!--Product 7-->
+      <div class="productContainer">
+       <!-- <div class="label">10% OFF</div>-->
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href=".\Assets\Images\titanbrown1.webp" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src=".\Assets\Images\titanbrown1.webp" alt="Product Image" />
+        </div>
+        <div class="title">Titan On Trend White Dial watch.</div>
+        <div class="prices">
+          <!--<span class="prevPrice"><del>रु1200</del></span>-->
+          <span class="newPrice">रु9099</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️ </div>
+      </div>
+      <!--Product 8-->
+      <div class="productContainer">
+        <!--<div class="label">10% OFF</div>-->
+        <div class="productImage">
+          <div class="buttons">
+            <button class="addToCart">
+              <img src="./Assets/Icons/cart.png" alt="" />
+            </button>
+            <button class="zoom">
+              <!--! MUST INCLUDE SAME IMAGE URL HERE-->
+              <a href=".\Assets\Images\omega2.avif" target="_blank"
+                ><img src="./Assets/Icons/zoom.png" alt=""
+              /></a>
+            </button>
+            <button class="heart">❤️</button>
+          </div>
+          <!-- Product Image-->
+
+          <img src=".\Assets\Images\omega2.avif" alt="Product Image" />
+        </div>
+        <div class="title">Omega Seamster Aqua Terra 150M .</div>
+        <div class="prices">
+          <!--<span class="prevPrice"><del>रु1200</del></span>-->
+          <span class="newPrice">रु2500</span>
+        </div>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+    </div>
+  
+ <div style="display: flex; width: 100%; justify-content: center; align-items: center; flex-direction: column;">
+<h1 style="margin-bottom: 30px;">Discover Our Collections</h1>
+<div class="container2">
+<div class="pictures">
+  <img src="Assets\Images\titaan.jpg" alt="Image 1">
+  <div class="text-overlay"> <a href="rolex.html" >Rolex </a></div>
+</div>
+<div class="pictures">
+  <img src="Assets\Images\t2.jpg" alt="Image 2">
+  <div class="text-overlay"><a href="titan.html" >Titan</a></div>
+</div>
+<div class="pictures">
+  <img src="Assets\Images\c6.jpg " alt="Image 3" style="object-fit: cover;">
+  <div class="text-overlay"><a href="omega.html">omega</a></div>
+</div>
+<div class="pictures">
+  <img src="Assets\Images\cartier.jpg" alt="Image 4">
+  <div class="text-overlay"><a href="casio.html">Casio</a></div>
+</div>
+</div>
+</div>
+
+
+    <!-- Footer Section Here -->
+     <link rel="stylesheet" href="./CSS/footer.css">
+    <footer>
+      <div class="footerItems changeNavColor">
+        <div class="footerWrapper">
+        <div class="brandName_Slogan">
+          <div class="brandName">Watchify<span>.</span></div>
+          <div class="slogan">Simple Yet Stylish.</div>
+        </div>
+        <div class="getInTouch">
+          <h3>Get in touch</h3>
+          <div class="getInTouch_Items">
+            <div class="phone">
+              <svg
+                height="13px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"\
+                fill="#fff"
+              >
+                <path
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+                /></svg
+              >+977 98104106
+            </div>
+            <div class="email">
+              <svg
+                height="13px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="#fff"
+              >
+                <path
+                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                />
+              </svg>
+              support@watchify.com
+            </div>
+          </div>
+          </div>
+          <div class="feedback">
+            <div class="title">
+              <h3>Feedback</h3>
+              </div>
+              <form onsubmit="checkForm(event)">
+              <div class="miniForm">
+                
+                <input type="text" placeholder="Name"  />
+                <input type="email" placeholder="Email" />
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Message"
+                ></textarea>
+                <button type="submit">Send</button>
+              </form>
+              </div>
+            </div>
+
+            <div class="explore">
+                <h3>Explore</h3>
+                <div class="exploreItems">
+                    <a href="./index.html"><div class="exploreItem">Home</div></a>
+                    <a href="./about.html"><div class="exploreItem">About</div></a>
+                    <a href="./blog.html"><div class="exploreItem">Blog</div></a>
+                    <a href="./products.html"><div class="exploreItem">Products</div></a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      </div>
+    </footer>
+
+<script type="text/javascript">
+  console.log(localStorage.getItem("id"));
+ if(localStorage.getItem("id") == null){
+    localStorage.setItem("id", 1);
+ }
+ 
+
+
+
+    console.log(localStorage.getItem("id"));
+  
+  const cartBtn = document.querySelectorAll(".addToCart");
+  const suscessMessage = document.querySelector(".suscessMessage");
+
+  cartBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      console.log(e);
+      // getting data from that element like image url name and price
+      const product = e.target.parentElement.parentElement.parentElement.parentElement;
+      
+      const productTitle = product.querySelector(".title").innerText;
+      const productImage = product.querySelector(".productImage").querySelectorAll("img")[2].src;
+      console.log(productImage);
+      const price = product.querySelector(".newPrice").innerText;
+      // console.log(productImage+productTitle+price);
+
+      const productData = {
+        title: productTitle,
+        image: productImage,
+        price: price,
+      };
+
+      // saving data to local storage
+   
+
+      var id = localStorage.getItem("id");
+      localStorage.setItem(`product${id}`, JSON.stringify(productData));
+      id++;
+
+      // incrementing id
+      localStorage.setItem("id", id );
+      console.log("okok   "+localStorage.getItem("id"));
+      
+      suscessMessage.style.transform = "translate(0, 150%)";
+      setTimeout(() => {
+        suscessMessage.style.transform = "translate(-100%, 150%)";
+      }, 2000);
+    });
+  });
+
+  function searchBar(){
+   var searchVal = document.querySelector('.searchBtn').value;
+
+    var productContainer = document.querySelectorAll('.productContainer');
+
+
+    productContainer.forEach((product)=>{
+      var title = product.querySelector('.title').innerText;
+      if(title.toLowerCase().includes(searchVal.toLowerCase())){
+        product.style.transition = 'all 0.3s ease';
+
+        product.style.display = 'block';
+
+      }else{
+        product.style.transition = 'all 0.3s ease';
+
+        product.style.display = 'none';
+      }
+    })
+
+
+  }
+</script>
+  </body>
+</html>

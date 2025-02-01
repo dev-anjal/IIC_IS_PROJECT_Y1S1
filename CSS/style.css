@@ -1,0 +1,301 @@
+/* Importing google fonts from fonts.google.com */
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Erica+One&family=Tsukimi+Rounded&display=swap");
+
+/* Setting some root variables */
+:root {
+  --accent-color: #00674f;
+  --accent-color-light: #0bd4a5;
+  --accent-text-color: gold;
+  --primary-text-color: #ffffff;
+  --background-color: rgba(0, 0, 0, 0.397);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --box-shadow-color: rgba(0, 0, 0, 0.5);
+  --hover-background-color: rgba(255, 217, 0, 0.452);
+  --hover-after-background-color: rgba(251, 255, 0, 1);
+  --intro-first-part-color: beige;
+  --intro-second-part-color: gold;
+  --home-branding-color: rgba(255, 255, 253, 0.582);
+  --our-partners-title-color: #ffffff;
+  --partners-background-color: rgba(0, 0, 0, 0.397);
+  --partners-border-color: rgba(255, 255, 255, 0.1);
+  --partners-box-shadow-color: rgba(0, 0, 0, 0.5);
+  --partners-hover-after-background-color: rgb(251, 255, 0, 1);
+  --partners-hover-color: var(--primary-text-hover-color);
+  --primary-text-hover-color: #000;
+  --primary-background-hover-color: rgba(255, 255, 255, 0.99);
+}
+/* Resetting all browser applied margin and padding to 0 */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* making website scroll smoothly */
+
+html {
+  scroll-behavior: smooth;
+}
+/* Home page background customization */
+.backgroundFixed {
+  width: 105%;
+  height: 100vh;
+  position: absolute;
+  margin: 0;
+}
+/* setting up top portion background */
+.backgroundFixed img {
+  width: 105%;
+  height: 100vh;
+  position: relative;
+  background-position: cover;
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.47) saturate(0.9) contrast(1.4);
+}
+/* setting up  body's background */
+body {
+  font-family: "DM Serif Text", serif;
+  /* background-color: wheat; */
+  z-index: 9999;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--primary-text-color);
+  overflow-x: hidden;
+  transition: 0.9s ease;
+  background-color: #f0f0f0;
+  /* background: linear-gradient(135deg, #03331f, #027763dc, #443a01bb, #6d8002b4); */
+  background-size: 400% 400%;
+  background-position: 30% 50%;
+
+  /* overflow: hidden; */
+  overflow-x: hidden;
+}
+
+/* setting up the navbar */
+
+/* INTRO TEXT ANIMATION WHEN LOADING !INITIAL */
+.introAnimation {
+  height: 50vh;
+  width: 40%;
+  /* background: rgba(0, 0, 0, 0.5); */
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  z-index: 100;
+  transition: 0.8s ease;
+}
+.introAnimation .introFirstPart {
+  border-bottom-right-radius: 77%;
+  font-size: 37px;
+  min-width: 88%;
+  overflow: hidden;
+  height: 27%;
+}
+.introAnimation .introFirstPart h1 {
+  transform: translateY(120px);
+  font-family: "Black Ops One", sans-serif;
+  font-weight: 10;
+  color: var(--intro-first-part-color);
+}
+.introSecondPart {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 23px;
+  width: fit-content;
+  overflow: hidden;
+  height: 30%;
+
+  transform: translateX(10px);
+  transform: translateY(-20px);
+  color: var(--intro-second-part-color);
+}
+.introAnimation .introSecondPart h1 {
+  transform: translateX(120%);
+}
+.introAnimation .introSecondPart .slideIntroText {
+  transform: translateX(0%);
+  transition: transform 2s cubic-bezier(0.86, 0.06, 0.07, 1);
+}
+
+.introAnimation .introFirstPart .rollTheIntro {
+  transform: translateY(0px);
+  transition: transform 2s cubic-bezier(0.86, 0.06, 0.07, 1);
+}
+
+.introWatch {
+  display: none;
+}
+.introWatchAnimation {
+  display: flex;
+  max-width: 30% !important;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* SELECTING AND ANIMATING THE BACKGROUND BLOB */
+.blobb {
+  position: absolute;
+  width: 80%;
+  height: 400px;
+  right: 10%;
+  top: -6%;
+  animation: rotateBlob 17s alternate infinite;
+}
+@keyframes rotateBlob {
+  /* back and fourth ROTATION MOVEMENT WITH SOME SCALING*/
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  10% {
+    transform: rotate(20deg) scale(1.06);
+  }
+  20% {
+    transform: rotate(0deg) scale(1);
+  }
+  30% {
+    transform: rotate(-10deg) scale(1.06);
+  }
+  40% {
+    transform: rotate(10deg) scale(1);
+  }
+
+  80% {
+    transform: rotate(100deg) scale(1);
+  }
+  90% {
+    transform: rotate(60deg) scale(1.06);
+  }
+  100% {
+    transform: rotate(10deg) scale(1);
+  }
+}
+
+/* SELECTING AND ANIMATING WATCH */
+.displayWatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: pulseWatch 3.5s infinite;
+  animation-delay: 0.8s;
+}
+/* watch scaling animation like pulse */
+@keyframes pulseWatch {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: translateY(-7px) scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.homeBranding {
+  position: fixed;
+  bottom: 40%;
+  font-size: 30px;
+  left: 43%;
+  transform: rotate(-90deg);
+  color: var(--home-branding-color);
+  font-family: "DM Serif Text", serif;
+}
+
+.ourPartnersTitle {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  color: black;
+}
+.ourPartners {
+  font-size: 2rem;
+  display: flex;
+  min-width: 100vw;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: rgb(255, 255, 255);
+}
+.partners {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  border: 1px solid var(--partners-border-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  height: fit-content;
+  width: fit-content;
+  padding: 15px 50px;
+  margin: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.801);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px var(--box-shadow-color);
+  transition: 1s ease;
+  overflow: hidden;
+  transform: translateY(0px), scale(1);
+  animation: partnerAnimate 9s alternate infinite;
+  animation-timing-function: linear;
+}
+/* slide animation */
+@keyframes partnerAnimate {
+  0% {
+    transform: translateX(-160px) scale(1);
+  }
+  100% {
+    transform: translateX(120px) scale(1);
+  }
+}
+/* .partners:hover {
+  cursor: pointer;
+  background-color: rgba(255, 217, 0, 0.452);
+  transition: all 0.3s ease-out;
+  transform: translateY(-5px);
+} */
+
+.partners::after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  background-color: var(--accent-color-light);
+  position: absolute;
+  left: -45px;
+  bottom: -80px;
+  transform: translateY(170px);
+  overflow: hidden;
+  transition: 0.5s ease;
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
+.partners:hover::after {
+  content: "";
+  width: 290px;
+  height: 290px;
+  background-color: var(--accent-color-light);
+
+  position: absolute;
+  left: -80x;
+  bottom: -80px;
+  transform: translateY(70px);
+  overflow: hidden;
+  transition: 0.5s ease;
+  opacity: 1;
+  z-index: -999;
+  border-radius: 50%;
+}
+.partners:hover {
+  box-shadow: 0 0 50px 4px var(--accent-color-light);
+  transform: translateY(-5px) scale(1.04);
+  transition: all 0.4s ease-out;
+
+  color: var(--primary-text-color);
+}

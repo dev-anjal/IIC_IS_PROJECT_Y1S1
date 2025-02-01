@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .collection-sec{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .text{
+            flex: 1;
+            padding: 10px;
+            margin-top: -50px;
+        }
+        .text h2{
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+        .watchimg{
+            flex: 1;
+            text-align: center;
+           
+
+        }
+        .watchimg img{
+            width: 300px;
+            border-radius: 10px;
+
+        }
+        .products{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            flex-direction: row;
+        }
+        .watchcard{
+            background: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0,1);
+            flex: 1 1 250px;
+            max-width: 300px;
+        }
+        .watchcard img{
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+           
+            
+        }
+        .watchcard:hover img{
+            transform: scale(1.1); 
+        }
+        .watchcard h2{
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .watchcard p{
+            margin: 5px 0;
+            color: #555;
+        }
+        .price{
+            font-weight: bold;
+            color: #f8f8f8;
+            font-size: 20px;
+        }
+  
+    </style>
+</head>
+<body>
+    <div class="collection-sec">
+        <div class="text">
+            <h2>The Rolex Collection</h2>
+            <h3><p>Classic Style</p></h3>
+            <p>Omega watches offer a variety of features, including water resistance, durability, and precision. Omega watches are known for their use of high-quality materials and proprietary technologies. </p>
+        </div>
+        <div class="watchimg">
+        <img src="Assets\Images\oom.avif" alt="">
+    </div>
+    </div>
+    <section class="products">
+        <div class="watchcard">
+            <img src="Assets\Images\01.avif"alt="">
+            <h2>Omega Watch</h2>
+            <p>De ville| Prestige</p>
+            <p class="Prices">$2000</p>
+        </div>
+        <div class="watchcard">
+            <img src="Assets\Images\02.avif" alt="">
+            <h2>Omega Watch</h2>
+            <p>Speedmster</p>
+            <p class="Prices">$300</p>
+        </div>
+        <div class="watchcard">
+            <img src="Assets\Images\03.avif" alt="">
+            <h2>Omega Watch</h2>
+            <p>Seamster Aqua Terra</p>
+            <p class="Prices">$250</p>
+        </div>
+        <div class="watchcard">
+            <img src="Assets\Images\04.avif" alt="">
+            <h2>Omega Watch</h2>
+            <p>Seamster Aqua Terra</p>
+            <p class="Prices">$200</p>
+        </div>
+        <div class="watchcard">
+            <img src="Assets\Images\05.avif" alt="">
+            <h2>Omega Watch</h2>
+            <p>Seamster Aqua Terra</p>
+            <p class="Prices">$115</p>
+        </div>
+        <div class="watchcard">
+            <img src="Assets\Images\06.avif" alt="">
+            <h2>Omega Watch</h2>
+            <p>Constellation</p>
+            <p class="Prices">$11700</p>
+        </div>
+        <div class="watchcard">
+            <img src="Assets\Images\08.avif" alt="">
+            <h2>Omega Watch</h2>
+            <p>De Ville| 40mm</p>
+            <p class="Prices">$5500</p>
+        </div>
+        <div class="watchcard">
+            <img src="Assets\Images\07.avif" alt="">
+            <h2>Omega Watch</h2>
+            <p>De Ville|Navy</p>
+            <p class="Prices">$150</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- adding Search Engine Optimization -->
+    <meta
+      name="description"
+      content="Watchify is a one-stop shop for all your watch needs. We have a wide range of watches from different brands."
+      keywords="watch, watches, watchify, watchify watches, watchify brands, watchify products"
+    />
+    <title>Watchify</title>
+    <link rel="shortcut icon" href="Assets/Icons/logo.ico" type="image/ico" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/product.css" />
+    <link rel="stylesheet" href="./CSS/navBar.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+    <!-- add icon -->
+    <link rel="shortcut icon" href="Assets/Icons/logo.ico" type="image/ico" />
+    <!-- ALL EXTERNAL JS-->
+    <script type="text/javascript" src="./JS/main.js" defer></script>
+
+    <!-- categories design with internal css -->
+     <style>
+        .categoriesContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        color:black;
+      }
+
+      .innercatWrapper {
+        
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 89%;
+        height: 80%;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
+
+      .categories {
+        scale:1.1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 230px;
+        height: 220px;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .categories img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .categories:hover {
+        transform: scale(1.1);
+      }
+
+      .categories h3 {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: black;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+     </style>
+   
+  </head>
+  <body onload="loadingAnimation()" background-color="black" class="grayscale">
+    <div
+      class="backgroundFixed"
+      style="max-height: 100vh !important; z-index: -1"
+    >
+      <img src="./Assets/Images/newbg.jpg" alt="" />
+    </div>
+    <nav class="navigationBar" style="z-index: 999">
+      <div class="nameLogo">
+        <div class="logo">
+          <!-- PLACEHOLDER FOR LOGO IF ANY-->
+        </div>
+        <div class="name">
+          <span class="name"
+            ><span
+              style="
+                color: gold;
+                font-family: 'Black Ops One', 'serif';
+                font-weight: lighter;
+                font-size: larger;
+              "
+              >W</span
+            >atchify</span
+          >
+        </div>
+      </div>
+      <!--!Replacing Brands With Research-->
+      <div class="navigationButtons">
+        <ul>
+          <li><a href="#" class="navBtn">Home</a></li>
+          <li><a href="./products.html" class="navBtn">Products</a></li>
+          <li><a href="./research.html" class="navBtn">Research</a></li>
+          <li><a href="./about.html" class="navBtn">About</a></li>
+          <li><a href="./blog.html" class="navBtn">Blog</a></li>
+          <li
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <a href="./cart.html" class="navBtn">
+              <svg
+                class="cartIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                height="22px"
+                viewBox="0 -960 960 960"
+                width="22px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Creating a gap between main content and navigationBar-->
+    <br /><br /><br /><br />
+    <br />
+    <br />
+
+    <!--Main Content-->
+
+    <main
+      class="sectionnn"
+      style="
+        display: block;
+        width: 100%;
+        height: 100vh;
+
+        scroll-snap-type: y mandatory;
+      "
+    >
+      <div
+        class="centerIntro"
+        style="display: flex; width: 100%; justify-content: end"
+      >
+        <div class="introAnimation" style="padding-top: 50px">
+          <div class="introFirstPart">
+            <h1 class="introFirstText">Luxury</h1>
+          </div>
+          <div class="introSecondPart">
+            <h1 class="introSecondText">
+              &nbsp;&nbsp;&nbsp;&nbsp; For Everyone<span
+                style="color: rgb(224, 231, 205)"
+                >.</span
+              >
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          width: 100%;
+          height: 100vh;
+          display: flex;
+
+          justify-content: end;
+
+          transform: translateY(0px);
+        "
+      >
+        <div
+          class="IntroWatch"
+          style="
+            transition: all 1s ease;
+            position: absolute;
+            right: 5%;
+            top: 0;
+
+            transform: translateX(110%);
+          "
+        >
+          <div class="backgroundCircle">
+            <svg
+              class="blobb"
+              viewBox="0 0 500 500"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="50%"
+              id="blobSvg"
+            >
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color: #00674fd0"></stop>
+                  <stop offset="100%" style="stop-color: #ffe6007e"></stop>
+                </linearGradient>
+              </defs>
+              <path
+                id="blob"
+                d="M449.5,288.5Q448,327,435.5,367.5Q423,408,384.5,426Q346,444,309.5,471Q273,498,227.5,493Q182,488,141.5,468Q101,448,88.5,403Q76,358,42,326.5Q8,295,19,252Q30,209,50,174Q70,139,88,99.5Q106,60,149,52.5Q192,45,230.5,46Q269,47,304.5,58.5Q340,70,383.5,79.5Q427,89,449.5,126.5Q472,164,461.5,207Q451,250,449.5,288.5Z"
+                fill="url(#gradient)"
+              ></path>
+            </svg>
+            <h2 class="homeBranding">ANARC</h2>
+            <img
+              class="displayWatch"
+              src="./Assets/Images/AnarcTransparent.png"
+              alt=""
+              width="480px"
+              height="350"
+              style="position: relative; top: 0"
+            />
+          </div>
+        </div>
+        <div
+          class="bottomIntroText"
+          style="
+            display: flex;
+            width: 100%;
+            height: 74vh;
+            justify-content: center;
+            align-items: end;
+            font-family: 'Black Ops One', 'serif';
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.582);
+            opacity: 0;
+            transition: all 1s ease;
+            transition-delay: 0.3s;
+            transform: translateY(220px);
+          "
+        >
+          <h1>
+            Your
+            <span style="color: rgba(255, 217, 0, 0.932); opacity: 1"
+              >One-Stop</span
+            >
+            Shop for Timeless Treasures<span
+              style="color: rgba(255, 217, 0, 0.877)"
+              >.</span
+            >
+          </h1>
+        </div>
+      </div>
+    </main>
+
+    <div id="Products" class="sectionnn" style="overflow: hidden; filter: brightness(0.94);">
+      <img
+        class="backgroundForProducts"
+        src="./Assets/Images/bggg.jpg"
+        alt=""
+        style="
+        scale:1;
+          margin-top: -29px;
+          position: absolute;
+          top: 30px;
+          right: 0;
+          width: 120vw;
+          height: 100vh;
+
+        "
+      />
+      <div class="bglower"></div>
+      <div class="productWrapper">
+        <!-- ADDING SOME GAPS-->
+        <br /><br /><br />
+        <!-- First Product name= Anarc watch 2024 -->
+        <div class="ProductsContent" style="scroll-snap-type: start">
+          <!-- Products Section here -->
+          <div class="productContainer">
+            <div class="hotLabel">Hot</div>
+            <div class="productImage" style="transform: scale(1.1)">
+              <img src="./Assets/Images/AnarcTransparent.png" alt="" />
+            </div>
+            <div class="sideInfo">
+              <div class="freeShippingLabel">Free Shipping</div>
+              <div class="productTitle">
+                <h2>Anarc Smart watch Aluminum build 2024</h2>
+              </div>
+              <div class="productPrevPrice">
+                <small><s>रु 8,999</s></small>
+              </div>
+              <div class="productPrice">रु 7,999</div>
+              <div class="offerDesc">
+                The offer is valid until <b>Feb 17!</b>
+              </div>
+              <div class="addToCard"><button>Add to cart</button></div>
+              <div class="stockAvailibility">
+                <div class="availibilityLight"></div>
+                15+ pcs. in stock
+              </div>
+              <div class="wishListAndEnquiry">
+                <button class="enquiry">🤔 Enquiry</button>
+                <button class="wishList">wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Second Product Rolex gold model-->
+        <div class="ProductsContent" style="scroll-snap-type: start">
+          <!-- Products Section here -->
+          <div class="productContainer">
+            <div class="hotLabel">Hot</div>
+            <div
+              class="productImage"
+              style="transform: rotate(5deg) scale(0.9)"
+            >
+              <img src="./Assets/Images/rolex.png" alt="" />
+            </div>
+            <div class="sideInfo">
+              <div class="freeShippingLabel">Free Shipping</div>
+              <div class="productTitle">
+                <h2>Rolex Gold Strap Gold inner Model 2018</h2>
+              </div>
+              <div class="productPrevPrice">
+                <small><s>रु 7,26,700</s></small>
+              </div>
+              <div class="productPrice">
+                रु 6<small>,</small>26<small>,</small>700
+              </div>
+              <div class="offerDesc">
+                The offer is valid until <b>Feb 6!</b>
+              </div>
+              <div class="addToCard"><button>Add to cart</button></div>
+              <div class="stockAvailibility">
+                <div class="availibilityLight"></div>
+                4+ pcs. in stock
+              </div>
+              <div class="wishListAndEnquiry">
+                <button class="enquiry">🤔 Enquiry</button>
+                <button class="wishList">wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Third Product casio black strap-->
+        <div class="ProductsContent" style="scroll-snap-type: start">
+          <!-- Products Section here -->
+          <div class="productContainer">
+            <div class="hotLabel">Hot</div>
+            <div class="productImage" style="transform: scale(0.85)">
+              <img src="./Assets/Images/casio.png" alt="" />
+            </div>
+            <div class="sideInfo">
+              <div class="freeShippingLabel">Free Shipping</div>
+              <div class="productTitle">
+                <h2>Casio G-shock digital watch model 2020</h2>
+              </div>
+              <div class="productPrevPrice">
+                <small><s>रु 4,279</s></small>
+              </div>
+              <div class="productPrice">रु 3,350</div>
+              <div class="offerDesc">
+                The offer is valid until <b>Feb 10!</b>
+              </div>
+              <div class="addToCard"><button>Add to cart</button></div>
+              <div class="stockAvailibility">
+                <div class="availibilityLight"></div>
+                40+ pcs. in stock
+              </div>
+              <div class="wishListAndEnquiry">
+                <button class="enquiry">🤔 Enquiry</button>
+                <button class="wishList">wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fourth Product -->
+        <div class="ProductsContent" style="scroll-snap-type: start">
+          <!-- Products Section here -->
+          <div class="productContainer">
+            <div class="hotLabel">Hot</div>
+            <div class="productImage" style="transform: scale(0.81)">
+              <img src="./Assets/Images/titan.png" alt="" />
+            </div>
+            <div class="sideInfo">
+              <div class="freeShippingLabel">Free Shipping</div>
+              <div class="productTitle">
+                <h2>Titan Timeless Style Watch:Refined Black Dial</h2>
+              </div>
+              <div class="productPrevPrice">
+                <small><s>रु 8,999</s></small>
+              </div>
+              <div class="productPrice">रु 7,999</div>
+              <div class="offerDesc">
+                The offer is valid until <b>Apr 14!</b>
+              </div>
+              <div class="addToCard"><button>Add to cart</button></div>
+              <div class="stockAvailibility">
+                <div class="availibilityLight"></div>
+                20+ pcs. in stock
+              </div>
+              <div class="wishListAndEnquiry">
+                <button class="enquiry">🤔 Enquiry</button>
+                <button class="wishList">wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!---->
+    <!-- Categories Section here -->
+    <!---->
+    <div class="categoriesContainer changeNavColor">
+      <div class="innercatWrapper" style="position: relative">
+        <div style="position: absolute; top: 70px">
+          <h1 style="font-family: 'Courier New', Courier, monospace">
+            Categories<span style="color: gold">.</span>
+          </h1>
+        </div>
+        <div class="categories cat1">
+          <img src="./Assets/Images/r3.webp" alt=""  sstyle="object-fit: cover;"/>
+          <h3>Modern</h3>
+        </div>
+        <div class="categories cat2">
+          <img src="Assets/Images/r5.webp" alt=""  style="object-fit: cover; " />
+          <h3>Vintage</h3>
+        </div>
+        <div class="categories cat3">
+          <img src="./Assets/Images/titann.webp" alt="" style="object-fit: cover;" />
+          <h3>Minimal</h3>
+        </div>
+        <div class="categories cat4">
+          <img src="./Assets/Images/anarc2.jpg" style="object-fit: cover;" />
+          <h3>Fit Band</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brands Section Here -->
+    <div id="Brands" class="sectionnn changeNavColor">
+      <div class="ourPartnersTitle">
+        Our Partners<span
+          style="
+            color: gold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+            font-size: 2rem;
+          "
+          >.</span
+        >
+
+        <div class="ourPartners">
+          <div class="partners partner1">Titan</div>
+          <div class="partners partner1">Anarc</div>
+          <div class="partners partner2">Rolex</div>
+          <div class="partners partner3">Casio</div>
+          <div class="partners partner4">Omega</div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Footer Section Here -->
+    <footer>
+      <div class="footerItems changeNavColor">
+        <div class="footerWrapper">
+        <div class="brandName_Slogan">
+          <div class="brandName">Watchify<span>.</span></div>
+          <div class="slogan">Simple Yet Stylish.</div>
+        </div>
+        <div class="getInTouch">
+          <h3>Get in touch</h3>
+          <div class="getInTouch_Items">
+            <div class="phone">
+              <svg
+                height="13px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"\
+                fill="#fff"
+              >
+                <path
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+                /></svg
+              >+977 98104106
+            </div>
+            <div class="email">
+              <svg
+                height="13px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="#fff"
+              >
+                <path
+                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                />
+              </svg>
+              support@watchify.com
+            </div>
+          </div>
+          </div>
+          <div class="feedback">
+            <div class="title">
+              <h3>Feedback</h3>
+              </div>
+              <form onsubmit="checkForm(event)">
+              <div class="miniForm">
+                
+                <input type="text" placeholder="Name"  />
+                <input type="email" placeholder="Email" />
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Message"
+                ></textarea>
+                <button type="submit">Send</button>
+              </form>
+              </div>
+            </div>
+
+            <div class="explore">
+                <h3>Explore</h3>
+                <div class="exploreItems">
+                  <a href="./index.html"><div class="exploreItem">Home</div></a>
+                  <a href="./about.html"><div class="exploreItem">About</div></a>
+                  <a href="./blog.html"><div class="exploreItem">Blog</div></a>
+                  <a href="./products.html"><div class="exploreItem">Products</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      </div>
+    </footer>
+    <script src="./JS/main.js"></script>
+    <noscript>Please Enable JavaScript In Your Browser </noscript>
+    <script type="text/javascript">
+      // Function to check the form
+
+      function checkForm(event) {
+        event.preventDefault();
+        // check if the form is valid
+        if (event.target[0].value === "" || event.target[1].value === "") {
+          alert("Please fill in all the fields");
+          
+          
+        }
+        else{
+          event.target[0].setCustomValidity("ok");
+        }
+
+        // check if the email is valid
+        if (!event.target[1].value.includes("@")) {
+          alert("Please enter a valid email");
+          return;
+        }
+
+        // check if the message is valid
+        if (event.target[2].value === "") {
+          alert("Please enter a message");
+          return;
+        }
+
+        // submit the form
+        submitForm(event);
+      }
+      // finalizing the form
+      function submitForm(event) {
+       
+
+          // reset all values
+          event.target[0].value = "";
+          event.target[1].value = "";
+          event.target[2].value = "ONLY ONE SUBMISSION ALLOWED";
+
+          event.target[2].disabled='true'
+
+          // DISABLE ALL input
+        event.submitter.disabled="true"
+        event.submitter.style.color="#ff8080"
+        event.submitter.innerHTML="DISABLED"
+        
+
+
+
+      }
+    </script>
+  </body>
+</html>

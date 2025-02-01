@@ -1,0 +1,145 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+.body {
+  font-family: Ubuntu, sans-serif;
+  background-color: #26c29d;
+}
+
+.introWritten h1 {
+  font-family: Ubuntu, sans-serif;
+  text-align: center;
+  color: #00674f;
+  background-color: transparent;
+}
+
+.introWritten p {
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  padding-top: 10px;
+  text-align: justify;
+  margin: 10px;
+}
+
+.researchContent {
+  font-family: Ubuntu, sans-serif;
+  text-align: center;
+  color: #0a0a0a;
+  margin: 5px;
+  padding: 10px;
+}
+
+.image-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.image-container img {
+  margin: 10px;
+  border-color: black;
+}
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 20px;
+  font-size: 16px;
+  text-align: left;
+}
+
+th,
+td {
+  font-family: Poppins, sans-serif;
+  border: 1px solid black;
+  padding: 10px;
+  color: black;
+}
+
+th {
+  font-family: Poppins, sans-serif;
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.Product-card {
+  display: flex;
+  gap: 75px;
+  padding: 10px;
+}
+
+.Product-card img {
+  margin: 5px;
+  padding: 20px;
+  border-color: black;
+  display: flex;
+}
+.disc2img {
+  align-items: center;
+  padding: 5px;
+  padding-bottom: 20px;
+}
+
+.navBarComparision h2 {
+  font-family: Ubuntu, sans-serif;
+
+  color: black;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.navImg img {
+  margin: 5px;
+  padding: 10px;
+}
+
+.navImg h1 {
+  font-family: Poppins, sans-serif;
+  font-size: 10px;
+  padding-top: 10px;
+  text-align: justify;
+  margin: 20px;
+}
+
+.navImg p {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: justify;
+  margin: 10px;
+}
+
+.Weblink {
+  display: flex;
+}
+
+.Weblink h1 {
+  font-family: Ubuntu, sans-serif;
+  text-align: left;
+  color: black;
+  margin: 5px;
+  padding: 10px;
+}
+
+.Weblink ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 25px;
+  gap: 15px;
+}
+
+.Weblink ul .linkBtn {
+  font-family: Ubuntu, sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  color: #00674f;
+  text-decoration: none;
+}
+
+.Weblink ul li :hover {
+  color: red;
+}
